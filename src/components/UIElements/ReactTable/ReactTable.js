@@ -9,7 +9,7 @@ const ReactTable = ( props ) => {
     // Then make a row for each one of them with it's data
     // Then add options to this row ( show, edit, delete )
     // Finally add them to locations array and show them in the table
-    const locationsArray = Object.keys( props.locations ).map( locationKey => {
+    const locationsArray = Object.keys( props.locations ).map( ( locationKey ) => {
         return (
             <tr className="table-row" key={ props.locations[ locationKey ].id }>
                 <td>{ +locationKey + 1 }</td>

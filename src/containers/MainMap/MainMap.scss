@@ -6,7 +6,7 @@
 
     // Map styles
     .leaflet-container { background: $--color-dark-blue!important; }
-    .map-container { width: 100%; height: 100%; 
+    .map-container { width: 100%; height: 100%;
         .leaflet-bottom { display: none; }
         .leaflet-left { right: 10px; left: unset; }
 
@@ -52,7 +52,7 @@
         // Searching model results styles
         .search-results { bottom: 60px; top: unset; ul { padding-top: 10px; } }
         .radio-container { width: calc( 100% - 214px ); display: inline-block; margin-right: 10px; }
-        
+
         // Event respond styles: Styling the accordion and titles with contents ...etc
         .event-respond {
             .card { background-color: transparent; border: none; @include add_prefixes( border-radius, 0 ); padding: 0;

@@ -25,7 +25,7 @@ const TextArea = ( props ) => (
 const Select = ( props ) => {
     // Get the selected option and loop on all options and make select HTML element with all of this options
     // Finally put all of thise options in the select menu
-    const selectMenuOptions = Object.keys(props.options).map(optionKey => {
+    const selectMenuOptions = Object.keys(props.options).map( ( optionKey ) => {
         return <option value={ optionKey } key={ optionKey }>{ props.options[optionKey] }</option>;
     });
     return (
@@ -42,7 +42,7 @@ const RadioButton = ( props ) => {
     // Get the selected option and loop on all options and make input field of all of them with it's options
     // Then put all of thise inputs in the same radio group
     const defaultValue = props.defaultselectedvalue;
-    const radioButtonOptions = Object.keys(props.options).map( optionKey => {
+    const radioButtonOptions = Object.keys(props.options).map( ( optionKey ) => {
         return (
             <Fragment key={ optionKey }>
                 <input type="radio" { ...props } id={ optionKey } value={ optionKey } defaultChecked={ defaultValue === optionKey ? true : false } />

@@ -215,7 +215,7 @@ class MainMap extends Component {
                     <TileLayer url="https://api.mapbox.com/styles/v1/ali-nasser/ckpfoqsaq00ck17s4otlto1d4/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYWxpLW5hc3NlciIsImEiOiJja21rc3ZlbXMxNGU2MnZxb2NjanhyY29yIn0.YTLiNcuXW-kRZjmxsZB3Mg" />
                     {
                         // Loop throw cameras and display it on the map
-                        this.props.cameras.map( camera => {
+                        this.props.cameras.map( ( camera ) => {
                             // Create a camera icon to show it as a marker for cameras
                             let cameraIcon = Leaflet.icon({ iconUrl: require( '../../assets/images/CameraMarker.svg' ).default, popupAnchor: [ 0, -50 ], iconAnchor: [ 20, 30 ], iconSize: [ 25.67, 31.5 ] });
                             return (
@@ -229,7 +229,7 @@ class MainMap extends Component {
                     }
                     {
                         // Loop throw locations data and display it on the map
-                        this.props.locations.map( location => {
+                        this.props.locations.map( ( location ) => {
                             // Choose the right icon based on the type of the action center to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that center which comming from database
                             let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ location.type }.svg` ).default, popupAnchor: [ 0, -20 ], iconAnchor: [ 20, 20 ] });

@@ -97,7 +97,7 @@ class SearchLocation extends Component {
     getSearchLocations = async () => {
         const input = document.querySelector( 'input[ type="search" ]' );
         try {
-            await provider.search({ query: input.value }).then( data => {
+            await provider.search({ query: input.value }).then( ( data ) => {
                 input.value !== '' ? this.setState({ loactions: data }) : this.setState({ loactions: [] });
             });
         } catch ( error ) {}
