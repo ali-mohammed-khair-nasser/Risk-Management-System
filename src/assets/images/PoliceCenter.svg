@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_5" data-name="Group 5" transform="translate(-523.26 -760.26)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="20" cy="20" r="20" transform="translate(523.26 760.26)" fill="#53db93"/>
+    <g id="Iconly_Bold_Shield_Done" data-name="Iconly/Bold/Shield Done" transform="translate(530.26 767.26)">
+      <g id="Shield_Done" data-name="Shield Done" transform="translate(3.895 2.226)">
+        <path id="Shield_Done-2" data-name="Shield Done" d="M9.551,22.26a.844.844,0,0,1-.393-.1L5.15,20.09a9.414,9.414,0,0,1-2.723-2.022,9.182,9.182,0,0,1-2.38-6.092L0,4.59a2.017,2.017,0,0,1,1.367-1.9L8.727.118A2.1,2.1,0,0,1,10.1.111l7.388,2.478a2.014,2.014,0,0,1,1.39,1.887l.047,7.391a9.173,9.173,0,0,1-2.3,6.116,9.4,9.4,0,0,1-2.7,2.053L9.956,22.16a.876.876,0,0,1-.4.1ZM6.566,10.025a.85.85,0,0,0-.6.244.8.8,0,0,0,.008,1.157l2.133,2.051a.843.843,0,0,0,.588.236H8.7A.847.847,0,0,0,9.3,13.47l4.339-4.278a.8.8,0,0,0-.007-1.157.856.856,0,0,0-1.188.006l-3.749,3.7L7.155,10.26A.846.846,0,0,0,6.566,10.025Z" transform="translate(0)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

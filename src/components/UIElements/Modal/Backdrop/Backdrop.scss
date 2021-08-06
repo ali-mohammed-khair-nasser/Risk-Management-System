@@ -1,0 +1,7 @@
+// Importing general style
+@import '../../../../assets/css/generalStyle';
+
+// Backdrop style
+.backdrop { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: 999999; background: rgba( 28, 29, 36, 0.8 ); backdrop-filter: blur( 14px ); mix-blend-mode: lighten; @extend %transitions;
+    .exit-icon { position: absolute; top: 45px; right: 50px; color: $--color-white; cursor: pointer; }
+}

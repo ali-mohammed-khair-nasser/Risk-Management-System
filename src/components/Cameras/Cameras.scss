@@ -1,0 +1,15 @@
+// Importing general style
+@import '../../assets/css/generalStyle';
+
+// Cameras styles
+.all-cameras { width: 100%; text-align: left;
+    .container { margin: 0; width: 100%; max-width: unset; }
+    .header { background-color: $--color-dark-blue; padding: 26px 150px!important;
+        h4 { color: $--color-white; margin: 0; line-height: 40px; }
+        .radio-button-group { margin: 0; label { margin-top: 0; } }
+    }
+    .cameras { background-color: #272832; width: 100%; padding: 15px 150px!important; height: calc( 100vh - 185px ); overflow: auto;
+        &::-webkit-scrollbar { width: 0; }
+        &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb { background-color: transparent; }
+    }
+}

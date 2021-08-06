@@ -1,0 +1,28 @@
+// Importing general style
+@import '../../assets/css/generalStyle';
+
+// Button menu bar styles
+.main-menu { background: rgba( 28, 29, 36, 0.8 ); height: 88px; position: fixed; z-index: 9999; width: 100%; bottom: 0; backdrop-filter: blur( 14px ); border-top: 1px solid $--color-dark-gray;
+    .inner-menu { display: inline-block; position: relative;
+        a { display: inline-block; width: 94px; height: 88px; line-height: 85px; text-align: center; margin: 0 15px; cursor: pointer;
+            .menu-icon { color: $--color-light-gray; @extend %transitions; }
+            &:hover { .menu-icon { color: $--color-white; } }
+            
+            // We use the position and opacity for the sliding animation when the menu icons click
+            &:nth-child(1).active ~ .slide { left: 15px; opacity: 1; }
+            &:nth-child(2).active ~ .slide { left: 139px; opacity: 1; }
+            &:nth-child(3).active ~ .slide { left: 263px; opacity: 1; }
+            &:nth-child(4).active ~ .slide { left: 387px; opacity: 1; }
+            &:nth-child(5).active ~ .slide { left: 511px; opacity: 1; }
+        }
+
+        // Color active menu icon with white after moving the slide element to it
+        .active { .menu-icon { color: $--color-white; } }
+
+        // Slide element styles
+        .slide { position: absolute; width: 94px; height: 3px; background-color: $--color-white; bottom: 0; left: 0; opacity: 0; @extend %transitions; }
+    }
+}
+
+// Showing dummy map image when the map is not loaded in the pages where no need to load the map
+.dummy-map { width: 100%; height: 88px; background-image: url( '../../assets/images/DummyMap.png' ); position: fixed; bottom: 0; background-size: cover; }

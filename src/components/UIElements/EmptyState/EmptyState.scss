@@ -1,0 +1,9 @@
+// Importing general style
+@import '../../../assets/css/generalStyle';
+
+// Empty state design styles
+.empty-state { position: absolute; top: 58%; left: 50%; @include add_prefixes( transform, translate( -50%, -50% ) ); text-align: center;
+    img { width: 500px; margin-bottom: 40px; }
+    h3 { font-size: 22px; color: $--color-white; }
+    p { font-size: 16px; opacity: .8; }
+}

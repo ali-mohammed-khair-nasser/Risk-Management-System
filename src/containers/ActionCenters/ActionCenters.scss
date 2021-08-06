@@ -1,0 +1,17 @@
+// Importing general style
+@import '../../assets/css/generalStyle';
+
+// Options styles
+.action-centers-option-area { width: 100%; background-color: $--color-dark-blue; padding: 35px 150px!important; text-align: left; 
+    .row > div { padding: 0 40px;
+        &:first-of-type { padding-left: 15px; }
+        &:last-of-type { padding-right: 15px; }
+    }
+}
+
+// Table styles
+// Include hidding the scroll bar of the table
+.action-centers-table { background-color: #272832; width: 100%; padding: 35px 150px!important; text-align: left; height: calc( 100vh - 252px ); overflow: auto;
+    &::-webkit-scrollbar { width: 0; }
+    &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb { background-color: transparent; }
+}

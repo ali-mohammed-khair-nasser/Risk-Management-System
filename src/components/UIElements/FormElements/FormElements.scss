@@ -1,0 +1,52 @@
+// Importing general style
+@import '../../../assets/css/generalStyle';
+
+// Button styles
+button { display: inline-block; padding: 0 40px; height: 45px; padding-bottom: 3px; margin: 15px 0!important; width: unset; cursor: pointer; border: none; outline: none; @include add_prefixes( border-radius, 25px!important ); color: $--color-white; @extend %transitions; letter-spacing: .3px; font-size: 14px!important; margin-right: 10px!important;
+    &:last-of-type { margin-right: 0!important; }
+}
+
+// Success button is green and danger button is red and on hover make the color darker a bit
+.button-success { background-color: $--color-green; &:hover { background-color: $--color-green - 40; } }
+.button-danger { background-color: $--color-red; &:hover { background-color: $--color-red - 40; } }
+.button-reverse { background-color: $--color-red; color: $--color-white; border: 1px solid $--color-white; &:hover { background-color: $--color-red - 40; border-color: $--color-red - 40; } }
+.button-reverse-active { background-color: $--color-white; color: $--color-red; }
+.circle-button { width: 43px; height: 43px; padding: 0; padding-bottom: 3px!important; @include add_prefixes( border-radius, 50% ); background-color: #000; position: absolute; bottom: 48px; z-index: 99999; right: 150px; }
+
+// Labels and input styles
+.input-area { width: 100%; overflow: hidden; padding: 15px 0; margin-bottom: 20px; max-height: 91px;
+    &:last-of-type { padding-bottom: 0; }
+    input { width: 100%; height: 45px; @include add_prefixes( border-radius, 25px ); font-size: 14px; border: none; outline: none; background-color: $--color-dark-gray; padding: 0 15px; padding-bottom: 0; color: $--color-white; 
+        &::placeholder { color: $--color-light-gray; opacity: .5; }
+        &::-webkit-search-cancel-button { filter: invert( 49% ) sepia( 21% ) saturate( 1369% ) hue-rotate( 313deg ) brightness( 110% ) contrast( 85% ); }
+        &::-webkit-inner-spin-button { -webkit-appearance: none; }
+    }
+}
+
+// Labels and input styles
+.text-area-area { width: 100%; overflow: hidden; padding: 15px 0;
+    &:last-of-type { padding-bottom: 0; }
+    textarea { width: 100%; height: 150px; @include add_prefixes( border-radius, 15px ); font-size: 14px; border: none; outline: none; background-color: $--color-dark-gray; padding: 0 15px; padding-bottom: 2px; color: $--color-white; padding-top: 10px; resize: none;
+        &::placeholder { color: $--color-light-gray; opacity: .5; }
+        &::-webkit-scrollbar { width: 1px; }
+        &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb { background-color: transparent; }
+    }
+}
+
+// Select menu styles
+.select-area { width: 174px; display: block; overflow: hidden; padding: 15px 0; position: relative; @include add_prefixes( border-radius, 25px ); margin-right: 10px; float: left;
+    .main-label { display: block; font-size: 14px; text-transform: uppercase; color: $--color-light-gray; margin-bottom: 7px; letter-spacing: .3px; }
+    .select-menu { width: 100%; height: 45px; @include add_prefixes( border-radius, 25px ); border: none; outline: none; background-color: $--color-dark-gray; padding: 0 15px; padding-bottom: 5px; color: $--color-light-gray; font-size: 14px; cursor: pointer; }
+    .menu-icon { color: $--color-light-gray; position: absolute; right: 0; top: 15px; width: 45px; height: 45px; padding: 11px; @include add_prefixes( border-radius, 50% ); background-color: $--color-dark-gray; pointer-events: none; }
+}
+
+// Change radio buttons styles to the button style
+.radio-button-group { display: flex; height: 45px; width: 100%; margin-bottom: 20px;
+    input[ type="radio" ] { visibility: hidden; height: 0; width: 0;
+        &:checked + label { color: $--color-green; border-color: $--color-green; }
+        &:hover:not(:checked) + label { color: $--color-light-gray; border-color: transparent; }
+    }
+    label:not([ class="main-label" ]) { display: flex; height: 100%; margin: 15px 0; border: 1px solid transparent; padding-bottom: 2px; flex: auto; vertical-align: middle; align-items: center; justify-content: center; text-align: center; cursor: pointer; background-color: $--color-dark-gray; color: $--color-light-gray; @include add_prefixes( border-radius, 25px ); transition: color .1s ease-out, background-color .1s ease-in; user-select: none; margin-right: 10px; @extend %transitions;
+        &:last-of-type { margin-right: 0; }
+    }
+}

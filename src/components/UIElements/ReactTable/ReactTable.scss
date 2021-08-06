@@ -1,0 +1,47 @@
+// Importing general style
+@import '../../../assets/css/generalStyle';
+
+// Table styles
+.react-table { border: none; color: $--color-light-gray;
+
+    // Header style
+    thead th { padding-bottom: 35px; border: none; border-bottom: $--border-opacity; font-weight: 400; font-size: 17px; letter-spacing: .3px;
+        &:first-of-type { padding-left: 30px; }
+        &:last-of-type { padding-left: 50px; width: 200px; }
+        &:nth-of-type( 3 ), &:nth-of-type( 4 ), &:nth-of-type( 5 ) { min-width: 100px; }
+    }
+
+    // Body style
+    tbody { &::before { content: ''; display: block; height: 15px; } }
+
+    // Row style for data view
+    .table-row { color: #C5C7E0; margin-top: 15px; font-weight: 400; height: 70px; line-height: 70px; cursor: pointer; @extend %transitions;
+        td { border: none; @extend %transitions; padding: 0 .75rem;
+            &:first-of-type { @include add_prefixes( border-bottom-left-radius, 50px ); @include add_prefixes( border-top-left-radius, 50px ); padding-left: 30px; }
+            &:last-of-type { @include add_prefixes( border-bottom-right-radius, 50px ); @include add_prefixes( border-top-right-radius, 50px ); text-align: center; width: 200px!important; padding: 0!important; }
+            &:nth-of-type( 3 ), &:nth-of-type( 4 ), &:nth-of-type( 5 ) { min-width: 100px; }
+
+            // Location options [ show - edit - delete ]
+            .row-options { @extend %transitions; @include add_prefixes( border-radius, 50px );
+                .row-options-icon { color: $--color-light-gray; margin-right: 12px; position: relative; top: -2px; @extend %transitions; &:last-of-type { margin-right: 0; } }
+            }
+        }
+
+        // Location status for cars and persons [ green ball for availiblity and red for not availible ]
+        .ball { width: 15px; height: 15px; @include add_prefixes( border-radius, 50% ); margin-right: 10px; display: inline-block; position: relative; top: 2px; }
+        .available-cars { color: $--color-green; .ball { background-color: $--color-green; } }
+        .no-available-cars { color: $--color-red; .ball { background-color: $--color-red; } }
+
+        // Row hover styles
+        &:hover { transform: scale( 1.03 ); background-color: #353541;
+            td { background-color: #353541; }
+            .row-options { background-color: #1E1F27;
+                .row-options-icon {
+                    &:nth-of-type( 1 ) { color: $--color-green; }
+                    &:nth-of-type( 2 ) { color: $--color-blue; }
+                    &:nth-of-type( 3 ) { color: $--color-red; }
+                }
+            }
+        }
+    }
+}

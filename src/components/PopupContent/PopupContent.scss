@@ -1,0 +1,21 @@
+// Importing general style
+@import '../../assets/css/generalStyle';
+
+// Variables
+$--opacity: .8;
+$--font-size: 15px;
+$--letter-spacing: .3px;
+
+// Popup content styles
+.popup-content {
+    .name { color: $--color-white; @include add_prefixes( text-transform, uppercase ); font-size: 20px; letter-spacing: $--letter-spacing; margin-bottom: -5px; }
+    p { color: $--color-light-gray; font-size: $--font-size; line-height: 22px; opacity: $--opacity; margin-bottom: 45px!important; }
+    ul { list-style: none; margin-bottom: 0;
+        li { display: inline-block; padding: 0 23px; border-right: $--border-opacity; text-align: center;
+            &:first-of-type { padding-left: 0; }
+            &:last-of-type { border-right: none; padding-right: 0; }
+            h3 { font-size: 28px; font-weight: 500; color: $--color-green; }
+            h6 { color: $--color-light-gray; letter-spacing: $--letter-spacing; font-size: $--font-size; opacity: $--opacity; }
+        }
+    }
+}

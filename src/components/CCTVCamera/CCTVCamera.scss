@@ -1,0 +1,29 @@
+// Importing general style
+@import '../../assets/css/generalStyle';
+
+// CCTV Cameras style
+.cctv-camera { width: 33.3333%; display: inline-block; overflow: hidden; height: 356px; position: relative; margin: 12px 0;
+    // Main video steam
+    .video-streem { margin: 0 15px; @include add_prefixes( border-radius, 15px ); overflow: hidden; height: 356px; cursor: zoom-in; video { height: 356px; } }
+
+    // Video options top bar
+    .video-options { position: absolute; top: 0; left: 15px; right: 15px; background: rgba( 28, 29, 36, 0.8 ); backdrop-filter: blur( 14px ); @include add_prefixes( border-top-left-radius, 14px ); @include add_prefixes( border-top-right-radius, 14px ); padding: 0 15px; height: 45px; z-index: 2;
+        .col { color: $--color-light-gray;
+            h6 { font-size: 15px; font-weight: 400; line-height: 45px; }
+            ul { list-style: none; line-height: 42px; margin: 0; float: right; direction: rtl;
+                li { display: inline-block; margin: 0 5px; @extend %transitions; cursor: pointer;
+                    &:first-of-type { margin-right: 0; }
+                    &:hover { color: $--color-white; }
+                    &:nth-of-type( 2 ) { cursor: auto; @include add_prefixes( text-transform, uppercase ); font-size: 13px; position: relative; padding-right: 5px; top: 2px;
+                        
+                        // Video status
+                        span { width: 5px; height: 5px; @include add_prefixes( border-radius, 50% ); display: block; position: absolute; top: 13px; right: 0; }
+                        span.active { background-color: $--color-green; }
+                        span.inactive { background-color: $--color-red; }
+                        &:hover { color: $--color-light-gray; }
+                    }
+                }
+            }
+        }
+    }
+}
