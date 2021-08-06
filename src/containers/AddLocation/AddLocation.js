@@ -7,7 +7,7 @@ import * as actions from '../../store/actions/index';
 import 'leaflet/dist/leaflet.css';
 import Leaflet from 'leaflet';
 import { Input, TextArea, Button, RadioButton } from '../../components/UIElements/FormElements/FormElements';
-import SearchLocation from '../SearchLocation/SearchLocation';;
+import SearchLocation from '../SearchLocation/SearchLocation';
 
 // Change the default marker icon
 delete Leaflet.Icon.Default.prototype._getIconUrl;

@@ -6,7 +6,7 @@ import { Button, RadioButton, Input, TextArea } from '../UIElements/FormElements
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import SearchLocation from '../../containers/SearchLocation/SearchLocation';
 
-const EditEvent = props => {
+const EditEvent = ( props ) => {
     return (
         <div className="edit-event">
             <div className="current-event-info">

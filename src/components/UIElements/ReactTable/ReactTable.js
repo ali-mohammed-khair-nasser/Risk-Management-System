@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import { Iconly } from 'react-iconly';
 import EmptyState from '../EmptyState/EmptyState';
 
-const ReactTable = props => {
+const ReactTable = ( props ) => {
     // Get all locations from props and loop on it
     // Then make a row for each one of them with it's data
     // Then add options to this row ( show, edit, delete )

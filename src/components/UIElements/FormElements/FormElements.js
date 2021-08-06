@@ -3,10 +3,10 @@ import './FormElements.scss';
 import { Iconly } from 'react-iconly';
 
 // Button
-const Button = props => <button { ...props }>{ props.children }</button>;
+const Button = ( props ) => <button { ...props }>{ props.children }</button>;
 
 // Input
-const Input = props => (
+const Input = ( props ) => (
     <div className="input-area">
         { props.mainlabel ? <label className="main-label">{ props.mainlabel }</label> : null }
         <input { ...props } />
@@ -14,7 +14,7 @@ const Input = props => (
 );
 
 // Textarea
-const TextArea = props => (
+const TextArea = ( props ) => (
     <div className="text-area-area">
         { props.mainlabel ? <label className="main-label">{ props.mainlabel }</label> : null }
         <textarea { ...props }></textarea>
@@ -22,7 +22,7 @@ const TextArea = props => (
 );
 
 // Select
-const Select = props => {
+const Select = ( props ) => {
     // Get the selected option and loop on all options and make select HTML element with all of this options
     // Finally put all of thise options in the select menu
     const selectMenuOptions = Object.keys(props.options).map(optionKey => {
@@ -38,7 +38,7 @@ const Select = props => {
 }
 
 // Radio button
-const RadioButton = props => {
+const RadioButton = ( props ) => {
     // Get the selected option and loop on all options and make input field of all of them with it's options
     // Then put all of thise inputs in the same radio group
     const defaultValue = props.defaultselectedvalue;

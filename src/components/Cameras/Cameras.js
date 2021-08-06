@@ -5,7 +5,7 @@ import { RadioButton } from '../../components/UIElements/FormElements/FormElemen
 import CCTVCamera from '../CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
 
-const Cameras = props => (
+const Cameras = ( props ) => (
     <div className="all-cameras">
         <div className="header">
             <Container>

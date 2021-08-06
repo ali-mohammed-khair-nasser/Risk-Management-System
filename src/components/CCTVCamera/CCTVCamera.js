@@ -3,7 +3,7 @@ import './CCTVCamera.scss';
 import { Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Iconly } from 'react-iconly';
 
-const CCTVCamera = props => (
+const CCTVCamera = ( props ) => (
     <div className="cctv-camera">
         <div className="video-options">
             <Row>

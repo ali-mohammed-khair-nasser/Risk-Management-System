@@ -1,7 +1,7 @@
 import React from 'react';
 import './PopupContent.scss';
 
-const PopupContent = props => (
+const PopupContent = ( props ) => (
     <div className="popup-content">
         <h2 className="name">{ props.centerInformation.name }</h2>
         <p>{ props.centerInformation.additionalInformation }</p>

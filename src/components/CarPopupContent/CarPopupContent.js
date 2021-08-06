@@ -1,7 +1,7 @@
 import React from 'react';
 import './CarPopupContent.scss';
 
-const CarPopupContent = props => (
+const CarPopupContent = ( props ) => (
     <div className="car-popup-content">
         <span className="icon" style={{ backgroundColor: props.iconcolor }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
