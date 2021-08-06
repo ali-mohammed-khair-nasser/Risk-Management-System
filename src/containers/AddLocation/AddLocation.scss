@@ -30,7 +30,7 @@
         .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: rgba( 28, 29, 36, 0.8 ); backdrop-filter: blur( 14px ); box-shadow: none!important; }
         .leaflet-popup-content { width: 550px!important; padding: 8px; }
         .leaflet-popup-tip-container { display: none; }
-        .leaflet-bar { border:none!important;
+        .leaflet-bar { border: none!important;
             a { background-color: $--color-dark-blue; color: $--color-light-gray; @include add_prefixes( border-radius, 5px!important ); border: none; margin-bottom: 3px; @extend %transitions;
                 &:hover { background-color: $--color-green; color: $--color-white; }
             }

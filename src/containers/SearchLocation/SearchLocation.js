@@ -100,7 +100,7 @@ class SearchLocation extends Component {
             await provider.search({ query: input.value }).then( ( data ) => {
                 input.value !== '' ? this.setState({ loactions: data }) : this.setState({ loactions: [] });
             });
-        } catch ( error ) {}
+        } catch ( error ) { console.log(error); }
     }
 
     // Get selected location function:
