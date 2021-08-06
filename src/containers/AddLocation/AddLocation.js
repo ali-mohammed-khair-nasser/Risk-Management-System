@@ -38,7 +38,7 @@ class AddLocation extends Component {
             additionalInformation: '',
             lat: null,
             lng: null
-        }
+        };
     }
 
     // This function used fo setting the center latitude and langtude with the final marker position on the map

@@ -63,14 +63,14 @@ class ActionCenters extends Component {
         }
         // Apply select boxes status filters ( Filter by availability )
         if ( this.state.filterBySelectBox.statusFilter === 'available' ) {
-            filteredLocations = filteredLocations.filter( location => location.currentCars > 0 );
+            filteredLocations = filteredLocations.filter( ( location ) => location.currentCars > 0 );
         } else if ( this.state.filterBySelectBox.statusFilter === 'notAvailable' ) {
-            filteredLocations = filteredLocations.filter( location => location.currentCars <= 0 );
+            filteredLocations = filteredLocations.filter( ( location ) => location.currentCars <= 0 );
         }
         // Apply search filter ( Filter by name )
-        filteredLocations = filteredLocations.filter( location => ( location.name.toLowerCase().includes( this.state.searchFilterBox.toLowerCase() ) ) );
+        filteredLocations = filteredLocations.filter( ( location ) => ( location.name.toLowerCase().includes( this.state.searchFilterBox.toLowerCase() ) ) );
         // Apply radio buttons filter ( Filter by type )
-        filteredLocations = ( this.state.viewCentersFilters === 'allCenters' ) ? filteredLocations : filteredLocations.filter( location => ( location.type.includes( this.state.viewCentersFilters ) ) );
+        filteredLocations = ( this.state.viewCentersFilters === 'allCenters' ) ? filteredLocations : filteredLocations.filter( ( location ) => ( location.type.includes( this.state.viewCentersFilters ) ) );
         // Return the filtered locations to apply the filters on the data
         return filteredLocations;
     }

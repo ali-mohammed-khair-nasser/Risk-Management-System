@@ -158,7 +158,7 @@ class MainMap extends Component {
             // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
             // The finished events will never shown on the map but we can get it from the history tab :)
             // setTimeout(() => { this.map.leafletElement.removeLayer(this.state.MapMarker); }, 1300);
-            axios.post( 'http://localhost:8080/api/event', eventInformation ).then( response => {
+            axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
                 if ( response ) {
                     console.log( response.data );
                     // Change the default marker icon based on event type [ The same in the colors :) ]
@@ -189,7 +189,7 @@ class MainMap extends Component {
 
                     // // Use the moving marker script to move the car marker on this coordinates smothly :)
                     // movingMarkerFunction( map, reversedPath, response.data.data.routData.distance, response.data.data.routData.duration, { autostart: true }, iconColor );
-                }}).catch( error => { console.log( error ); } );
+                }}).catch( ( error ) => { console.log( error ); } );
         }
     }
 
@@ -233,7 +233,7 @@ class MainMap extends Component {
                             // Choose the right icon based on the type of the action center to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that center which comming from database
                             let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ location.type }.svg` ).default, popupAnchor: [ 0, -20 ], iconAnchor: [ 20, 20 ] });
-                            return ( <Marker position={[ location.lat, location.lng ]} icon={ markerIcon } key={ location.id }><Popup><PopupContent centerInformation={ location } /></Popup></Marker> )
+                            return ( <Marker position={[ location.lat, location.lng ]} icon={ markerIcon } key={ location.id }><Popup><PopupContent centerInformation={ location } /></Popup></Marker> );
                         })
                     }
                 </Map>
