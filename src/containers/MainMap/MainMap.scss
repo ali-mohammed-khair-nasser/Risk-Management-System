@@ -17,7 +17,7 @@
         .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: rgba( 28, 29, 36, 0.8 ); backdrop-filter: blur( 14px ); box-shadow: none!important; }
         .leaflet-popup-content { width: 550px!important; padding: 8px; }
         .leaflet-popup-tip-container, .leaflet-routing-container { display: none; }
-        .leaflet-bar { border:none!important;
+        .leaflet-bar { border: none!important;
             a { background-color: $--color-dark-blue; color: $--color-light-gray; @include add_prefixes( border-radius, 5px!important ); border: none; margin-bottom: 3px; @extend %transitions;
                 &:hover { background-color: $--color-green; color: $--color-white; }
             }
@@ -26,8 +26,7 @@
         // View the video of the camera inside the popup for the cameras markers :)
         .camera-popup { margin: 0; padding: 0;
             .leaflet-popup-content { margin: 0; padding: 0; line-height: 0; max-width: 530px; }
-            .leaflet-popup-content-wrapper { padding: 0; }
-            .leaflet-popup-content-wrapper { background-color: transparent; }
+            .leaflet-popup-content-wrapper { padding: 0; background-color: transparent; }
             .cctv-camera { width: 100%; margin: 0;
                 .video-streem { margin: 0; }
                 .video-options { left: 0; right: 0; }
@@ -54,8 +53,7 @@
         .search-results { bottom: 60px; top: unset; ul { padding-top: 10px; } }
         .radio-container { width: calc( 100% - 214px ); display: inline-block; margin-right: 10px; }
         
-        // Event respond styles
-        // Styling the accordion and titles with contents ...etc
+        // Event respond styles: Styling the accordion and titles with contents ...etc
         .event-respond {
             .card { background-color: transparent; border: none; @include add_prefixes( border-radius, 0 ); padding: 0;
                 .card-header { padding: 0; margin: 0; border: none; background-color: transparent;

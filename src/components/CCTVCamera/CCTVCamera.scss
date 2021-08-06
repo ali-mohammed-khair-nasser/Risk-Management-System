@@ -14,8 +14,7 @@
                 li { display: inline-block; margin: 0 5px; @extend %transitions; cursor: pointer;
                     &:first-of-type { margin-right: 0; }
                     &:hover { color: $--color-white; }
-                    &:nth-of-type( 2 ) { cursor: auto; @include add_prefixes( text-transform, uppercase ); font-size: 13px; position: relative; padding-right: 5px; top: 2px;
-                        
+                    &:nth-of-type( 2 ) { cursor: auto; @include add_prefixes( text-transform, uppercase ); font-size: 13px; position: relative; padding-right: 5px; top: 2px;       
                         // Video status
                         span { width: 5px; height: 5px; @include add_prefixes( border-radius, 50% ); display: block; position: absolute; top: 13px; right: 0; }
                         span.active { background-color: $--color-green; }

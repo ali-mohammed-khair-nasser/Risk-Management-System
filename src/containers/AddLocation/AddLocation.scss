@@ -24,7 +24,7 @@
     .map-container { height: 100%;
         .leaflet-bottom { display: none; }
         .leaflet-left { right: 10px; left: unset; }
-        .leaflet-marker-pane { img { width: 40px; height: 40px; outline: none;} }
+        .leaflet-marker-pane { img { width: 40px; height: 40px; outline: none; } }
         .leaflet-popup-close-button { display: none!important; }
         .leaflet-popup-content-wrapper { @include add_prefixes( border-radius, 10px ); }
         .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: rgba( 28, 29, 36, 0.8 ); backdrop-filter: blur( 14px ); box-shadow: none!important; }
