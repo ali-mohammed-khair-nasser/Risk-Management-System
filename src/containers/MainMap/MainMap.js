@@ -158,7 +158,6 @@ class MainMap extends Component {
             // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
             // The finished events will never shown on the map but we can get it from the history tab :)
             // setTimeout(() => { this.map.leafletElement.removeLayer(this.state.MapMarker); }, 1300);
-            
             axios.post( 'http://localhost:8080/api/event', eventInformation ).then( response => {
                 if ( response ) {
                     console.log( response.data );
