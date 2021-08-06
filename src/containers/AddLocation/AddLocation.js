@@ -120,6 +120,6 @@ class AddLocation extends Component {
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = state => ({ addNewCenter: state.elements.addNewCenter, deleteCenter: state.elements.deleteCenter });
-const mapDispatchToProps = dispatch => ({ addNewLocation: (elementType, elementInfo) => dispatch(actions.addElement(elementType, elementInfo)) });
+const mapStateToProps = ( state ) => ({ addNewCenter: state.elements.addNewCenter, deleteCenter: state.elements.deleteCenter });
+const mapDispatchToProps = ( dispatch ) => ({ addNewLocation: ( elementType, elementInfo ) => dispatch(actions.addElement(elementType, elementInfo)) });
 export default connect(mapStateToProps, mapDispatchToProps)(AddLocation);

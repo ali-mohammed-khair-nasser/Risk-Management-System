@@ -281,5 +281,5 @@ class MainMap extends Component {
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = state => ({ locations: state.elements.locations, cameras: state.elements.cameras });
+const mapStateToProps = ( state ) => ({ locations: state.elements.locations, cameras: state.elements.cameras });
 export default connect(mapStateToProps)(MainMap);

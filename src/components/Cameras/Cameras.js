@@ -16,11 +16,11 @@ const Cameras = ( props ) => (
             </Container>
         </div>
         <div className="cameras">
-            <Container>{ props.cameras.map( cameraKey => <CCTVCamera key={ cameraKey.id } cameraName={ cameraKey.name } cameraStatus={ true } videoSource={ require( '../../assets/videos/' + cameraKey.streamUrl ).default } autoPlay={ true } muted={ true } loop={ true } />) }</Container>
+            <Container>{ props.cameras.map( ( cameraKey ) => <CCTVCamera key={ cameraKey.id } cameraName={ cameraKey.name } cameraStatus={ true } videoSource={ require( '../../assets/videos/' + cameraKey.streamUrl ).default } autoPlay={ true } muted={ true } loop={ true } />) }</Container>
         </div>
     </div>
 );
 
 // Connect the component to redux store then export it
-const mapStateToProps = state => ({ cameras: state.elements.cameras });
+const mapStateToProps = ( state ) => ({ cameras: state.elements.cameras });
 export default connect(mapStateToProps)(Cameras);

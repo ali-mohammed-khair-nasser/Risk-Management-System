@@ -125,18 +125,18 @@ class ActionCenters extends Component {
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = state => ({
+const mapStateToProps = ( state ) => ({
     locations: state.elements.locations,
     addNewCenter: state.elements.addNewCenter,
     deleteCenter: state.elements.deleteCenter
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = ( dispatch ) => ({
     updateData: () => dispatch(actions.getAllElements()),
     addNewLocationBackdropOpen: () => dispatch(actions.addElementBackdropOpen()),
     hideBackdrop: () => dispatch(actions.hideBackdrop()),
     deleteElementBackdropOpen: () => dispatch(actions.deleteElementBackdropOpen()),
-    deleteElement: (elementType, elementID) => dispatch(actions.deleteElement( elementType, elementID ))
+    deleteElement: ( elementType, elementID ) => dispatch(actions.deleteElement( elementType, elementID ))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActionCenters);
