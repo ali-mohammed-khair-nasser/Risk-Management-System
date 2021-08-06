@@ -84,7 +84,7 @@ class AddLocation extends Component {
             currentCars: this.state.numberOfCars,
             currentPersons: this.state.numberOfPersons,
             additionalInformation: this.state.additionalInformation
-        }
+        };
 
         // Passing the data to the database
         this.props.addNewLocation("station", locationInformation);
