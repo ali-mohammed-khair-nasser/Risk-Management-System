@@ -2,6 +2,6 @@
 * { box-sizing: border-box; padding: 0; margin: 0; }
 a, a:hover, a:visited, a:focus { text-decoration: none; }
 img { width: 100%; height: auto; }
-body { margin: 0; font-family: 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; overflow: hidden; }
+body { margin: 0; font-family: 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; overflow: hidden; background-color: #1C1D24; }
 code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
 /* End general styling */

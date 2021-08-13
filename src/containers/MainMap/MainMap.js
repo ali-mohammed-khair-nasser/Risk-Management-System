@@ -78,6 +78,37 @@ class MainMap extends Component {
         this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), lat: locationLatLng.lat, lng: locationLatLng.lng }, mapMarker: mapMarker });
     }
 
+    // Generate event name function:
+    // =============================
+    // This function generate a unique name for each event on click add event button
+    // And it change the name of an event based on it's type
+    // This function helps the user to add event fast and don't take time to think about event name ( just to make the request to an event faster )
+    // It will used in AI models too for making the right event request event without user requiring.
+    generateEventNames = (eventType) => {
+        let chars = "abcdefghijklmnopqrstuvwxyz0123456789",                                      // Chars & numbers that used to generate the ID
+            size = 4,                                                                            // Max size of the ID
+            i = 1,                                                                               // Starting point of chars
+            generatedID = "";                                                                    // The result of generating will saved in this variable
+
+        // While the number of ID characters not equal to size repeat generating characters
+        while ( i <= size ) { 
+            let max = chars.length - 1,
+                num = Math.floor(Math.random() * max),
+                temp = chars.substr(num, 1);
+            generatedID += temp;
+            i++;
+        }
+        // Just setting the type of the event name to match each other
+        if ( eventType === 'Fire' ) eventType = 'fire_and_smoke';
+        if ( eventType === 'Violence' ) eventType = 'fighting';
+        if ( eventType === 'Medical' ) eventType = 'person_falling';
+        generatedID = `Event_${ eventType.toLowerCase() }_${ generatedID.toUpperCase() }`;
+
+        // Set tthe event name in the ui :)
+        document.querySelector( 'input[ name="eventName" ]' ).value = generatedID;
+        return generatedID;
+    }
+
     // Add event panel function:
     // ============================
     // Used to open and close the adding event panel so when add event button clicked will slide up to open
@@ -92,7 +123,7 @@ class MainMap extends Component {
         setTimeout( () => { document.getElementById( 'add-event' ).classList.toggle( 'overflow-toggle-class' ); }, 300 );
 
         // Clear everything in the inputs on closing the panel
-        document.querySelector( 'input[ name="eventName" ]' ).value = '';
+        document.querySelector( 'input[ name="eventName" ]' ).value = this.generateEventNames(this.state.eventInformation.type);
         document.querySelector( 'input[ id="Fire" ]' ).checked = true;
         document.querySelector( 'textarea[ name="additionalInformation" ]' ).value = '';
         document.querySelector( 'input[ name="MedicalCrasNumber" ]' ).value = '';
@@ -242,7 +273,7 @@ class MainMap extends Component {
                     <Row>
                         <Col>
                             <h2 className="section-title">Select an event to add it to the map</h2>
-                            <RadioButton name="eventType" defaultselectedvalue="Fire" options={{ Fire: 'Fire & Smoke', Violence: 'Fighting', Medical: 'Medical Event' }} onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), type: event.target.value } }) } />
+                            <RadioButton name="eventType" defaultselectedvalue="Fire" options={{ Fire: 'Fire & Smoke', Violence: 'Fighting', Medical: 'Medical Event' }} onChange={ ( event ) => { this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), type: event.target.value } }); this.generateEventNames(event.target.value); } } />
                             <h2 className="section-title">Event name</h2>
                             <Input type="text" name="eventName" placeholder="Event_fire_and_smoke_135" autoComplete="off" onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), name: event.target.value } }) } />
                             <h2 className="section-title">Add location</h2>
