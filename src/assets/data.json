@@ -1,0 +1,703 @@
+{
+  "Camera": [
+    {
+      "detectionModels": true,
+      "lat": 33.51581578247329,
+      "lng": 36.261663436889656,
+      "name": "AS_CAMERA_091",
+      "sounds": false,
+      "streamUrl": "normal (1).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.506423033854055,
+      "lng": 36.26376628875733,
+      "name": "AMD_1952.0.2",
+      "sounds": false,
+      "streamUrl": "violence (1).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.49676085735321,
+      "lng": 36.27376556396485,
+      "name": "TE_CAMERA_984",
+      "sounds": false,
+      "streamUrl": "normal (2).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.49210831365062,
+      "lng": 36.26681327819825,
+      "name": "OER D_CAMERA_98412",
+      "sounds": false,
+      "streamUrl": "normal (3).mp4",
+      "type": "Record"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.51476026729208,
+      "lng": 36.27659797668458,
+      "name": "OERD_CAMERA_948",
+      "sounds": false,
+      "streamUrl": "fire (1).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.518588684728606,
+      "lng": 36.286125183105476,
+      "name": "OD_CAMERA_788",
+      "sounds": false,
+      "streamUrl": "normal (4).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.5126849795564,
+      "lng": 36.289644241333015,
+      "name": "DMO_691_CAM",
+      "sounds": false,
+      "streamUrl": "normal (5).mp4",
+      "type": "Record"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.502629863528526,
+      "lng": 36.28878593444825,
+      "name": "EOS_00165",
+      "sounds": false,
+      "streamUrl": "violence (3).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.48992511081418,
+      "lng": 36.292648315429695,
+      "name": "EDS_312000",
+      "sounds": false,
+      "streamUrl": "normal (6).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.50796172536173,
+      "lng": 36.30157470703126,
+      "name": "ABC_CAMERA_846",
+      "sounds": false,
+      "streamUrl": "normal (1).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.49729767323101,
+      "lng": 36.30805492401124,
+      "name": "DRES_CAM.15.5",
+      "sounds": false,
+      "streamUrl": "violence (4).mp4",
+      "type": "Record"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.51322169667398,
+      "lng": 36.31865501403809,
+      "name": "TENS_AMERA_9819",
+      "sounds": false,
+      "streamUrl": "normal (3).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.503667634193214,
+      "lng": 36.32028579711915,
+      "name": "AS_CAMERA_9841",
+      "sounds": false,
+      "streamUrl": "normal (5).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.494112516974,
+      "lng": 36.32316112518311,
+      "name": "AMD_1952.98.645.5",
+      "sounds": false,
+      "streamUrl": "violence (4).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.5153327517004,
+      "lng": 36.3334608078003,
+      "name": "TE_CAMERA_894951",
+      "sounds": false,
+      "streamUrl": "fire (2).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": "33.48485001907314",
+      "lng": "36.33814005441895",
+      "name": "SAM_CAM_651651",
+      "sounds": false,
+      "streamUrl": "violence (1).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.50627989836952,
+      "lng": 36.33500576019288,
+      "name": "TE_CAMERA_012",
+      "sounds": false,
+      "streamUrl": "violence (3).mp4",
+      "type": "live"
+    },
+    {
+      "detectionModels": true,
+      "lat": 33.49081987273162,
+      "lng": 36.3114881515503,
+      "name": "TCD_CAMERA_1547",
+      "sounds": false,
+      "streamUrl": "violence (1).mp4",
+      "type": "live"
+    }
+  ],
+  "Station": [
+    {
+      "id": 1,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 0,
+      "currentPersons": 29,
+      "lat": 33.518038752167094,
+      "lng": 36.32923052653133,
+      "name": "Joubar Police Department",
+      "numberOfCars": 17,
+      "numberOfPersons": 94,
+      "type": "policeCenter"
+    },
+    {
+      "id": 2,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 22,
+      "currentPersons": 165,
+      "lat": 33.52030363087117,
+      "lng": 36.29276644430257,
+      "name": "Corncobs police station",
+      "numberOfCars": 28,
+      "numberOfPersons": 216,
+      "type": "policeCenter"
+    },
+    {
+      "id": 3,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 42,
+      "currentPersons": 576,
+      "lat": 33.49177727542874,
+      "lng": 36.296831332822194,
+      "name": "Al Midan Police Station",
+      "numberOfCars": 44,
+      "numberOfPersons": 612,
+      "type": "policeCenter"
+    },
+    {
+      "id": 4,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 23,
+      "currentPersons": 130,
+      "lat": 33.4913656906456,
+      "lng": 36.32109995998894,
+      "name": "Patrol Palestine Branch",
+      "numberOfCars": 31,
+      "numberOfPersons": 183,
+      "type": "policeCenter"
+    },
+    {
+      "id": 5,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 18,
+      "currentPersons": 68,
+      "lat": 33.50588852875152,
+      "lng": 36.31304528631722,
+      "name": "Shaghour Fire Station",
+      "numberOfCars": 19,
+      "numberOfPersons": 81,
+      "type": "fireStation"
+    },
+    {
+      "id": 6,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 18,
+      "currentPersons": 98,
+      "lat": 33.50546582848033,
+      "lng": 36.29547681726967,
+      "name": "Khaled Ibn Alwaleed Fire Station",
+      "numberOfCars": 21,
+      "numberOfPersons": 123,
+      "type": "fireStation"
+    },
+    {
+      "id": 7,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 5,
+      "currentPersons": 43,
+      "lat": 33.484019060670576,
+      "lng": 36.29210393905639,
+      "name": "Al-Midan Fire Station",
+      "numberOfCars": 13,
+      "numberOfPersons": 69,
+      "type": "fireStation"
+    },
+    {
+      "id": 8,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 0,
+      "currentPersons": 8,
+      "lat": 33.51375802097011,
+      "lng": 36.27416532516479,
+      "name": "Al Rabwah Fire Station",
+      "numberOfCars": 8,
+      "numberOfPersons": 67,
+      "type": "fireStation"
+    },
+    {
+      "id": 9,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 0,
+      "currentPersons": 13,
+      "lat": 33.52071749775814,
+      "lng": 36.31655216217041,
+      "name": "El-Zahrawi Hospital",
+      "numberOfCars": 9,
+      "numberOfPersons": 43,
+      "type": "medicalCenter"
+    },
+    {
+      "id": 10,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 3,
+      "currentPersons": 15,
+      "lat": 33.5028382541483,
+      "lng": 36.32725095661207,
+      "name": "Dispensary Dwylah",
+      "numberOfCars": 8,
+      "numberOfPersons": 29,
+      "type": "medicalCenter"
+    },
+    {
+      "id": 11,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 8,
+      "currentPersons": 128,
+      "lat": 33.5000711689058,
+      "lng": 36.29539489746094,
+      "name": "Damascus Hospital (Almujtahed)",
+      "numberOfCars": 14,
+      "numberOfPersons": 320,
+      "type": "medicalCenter"
+    },
+    {
+      "id": 12,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 16,
+      "currentPersons": 168,
+      "lat": 33.505257511008956,
+      "lng": 36.26953303813934,
+      "name": "Alassad University Hospital",
+      "numberOfCars": 28,
+      "numberOfPersons": 843,
+      "type": "medicalCenter"
+    },
+    {
+      "id": 13,
+      "additionalInformation": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "city": "Damascus",
+      "country": "Syria",
+      "currentCars": 2,
+      "currentPersons": 13,
+      "lat": 33.52001088075479,
+      "lng": 36.26829385757446,
+      "name": "Shami Hospital",
+      "numberOfCars": 6,
+      "numberOfPersons": 39,
+      "type": "medicalCenter"
+    }
+  ],
+
+  "Element": [
+    {
+        "name": "FIRECAR_1",
+        "type": "FireCar",
+        "lat": 33.49478948806379,
+        "lng": 36.30801369620017,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_2",
+        "type": "FireCar",
+        "lat": 33.51600770513512,
+        "lng": 36.28549609693557,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_3",
+        "type": "FireCar",
+        "lat": 33.50663075091637,
+        "lng": 36.32194366576977,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_4",
+        "type": "FireCar",
+        "lat": 33.5130291345133,
+        "lng": 36.27908095359787,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_5",
+        "type": "FireCar",
+        "lat": 33.51216224075849,
+        "lng": 36.29563927721134,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_6",
+        "type": "FireCar",
+        "lat": 33.51237491660386,
+        "lng": 36.29463349800325,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_7",
+        "type": "FireCar",
+        "lat": 33.51300264686687,
+        "lng": 36.32492702298301,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_8",
+        "type": "FireCar",
+        "lat": 33.50885455571314,
+        "lng": 36.33764296106072,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_9",
+        "type": "FireCar",
+        "lat": 33.52478936798099,
+        "lng": 36.30215907444787,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_10",
+        "type": "FireCar",
+        "lat": 33.50611544666554,
+        "lng": 36.27971133291175,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_11",
+        "type": "FireCar",
+        "lat": 33.52363778207521,
+        "lng": 36.29520588952692,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_12",
+        "type": "FireCar",
+        "lat": 33.50649526976422,
+        "lng": 36.28782181566266,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_13",
+        "type": "FireCar",
+        "lat": 33.50383207931807,
+        "lng": 36.32438871666258,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_14",
+        "type": "FireCar",
+        "lat": 33.51214823630024,
+        "lng": 36.27289514979357,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_15",
+        "type": "FireCar",
+        "lat": 33.51757284093256,
+        "lng": 36.3381622619892,
+        "stationId": 1
+    },
+    {
+        "name": "FIRECAR_16",
+        "type": "FireCar",
+        "lat": 33.52658768152389,
+        "lng": 36.32542910010002,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_17",
+        "type": "PoliceCar",
+        "lat": 33.49788578664904,
+        "lng": 36.30988357119806,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_18",
+        "type": "PoliceCar",
+        "lat": 33.49738407890885,
+        "lng": 36.29310601500424,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_19",
+        "type": "PoliceCar",
+        "lat": 33.51574524484082,
+        "lng": 36.32058672379917,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_20",
+        "type": "PoliceCar",
+        "lat": 33.51051676541163,
+        "lng": 36.31683913485697,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_21",
+        "type": "PoliceCar",
+        "lat": 33.51374850075867,
+        "lng": 36.26272005629482,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_22",
+        "type": "PoliceCar",
+        "lat": 33.51848751642832,
+        "lng": 36.29371106761376,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_23",
+        "type": "PoliceCar",
+        "lat": 33.49750063979729,
+        "lng": 36.27151174610689,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_24",
+        "type": "PoliceCar",
+        "lat": 33.51261366657123,
+        "lng": 36.29330537501836,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_25",
+        "type": "PoliceCar",
+        "lat": 33.51163481028613,
+        "lng": 36.27041782198032,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_26",
+        "type": "PoliceCar",
+        "lat": 33.5034366338478,
+        "lng": 36.31628117671045,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_27",
+        "type": "PoliceCar",
+        "lat": 33.51371085423134,
+        "lng": 36.28696024030094,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_28",
+        "type": "PoliceCar",
+        "lat": 33.49821506469237,
+        "lng": 36.30279695095531,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_29",
+        "type": "PoliceCar",
+        "lat": 33.50118359396373,
+        "lng": 36.30143211452877,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_30",
+        "type": "PoliceCar",
+        "lat": 33.49891987540163,
+        "lng": 36.30401767950046,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_31",
+        "type": "PoliceCar",
+        "lat": 33.49155236412475,
+        "lng": 36.30911006320746,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_32",
+        "type": "PoliceCar",
+        "lat": 33.49577674649829,
+        "lng": 36.29078799999438,
+        "stationId": 1
+    },
+    {
+        "name": "POLICECAR_33",
+        "type": "PoliceCar",
+        "lat": 33.50858222308471,
+        "lng": 36.30535766301747,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_34",
+        "type": "Ambulance",
+        "lat": 33.49298614735319,
+        "lng": 36.32015823967922,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_35",
+        "type": "Ambulance",
+        "lat": 33.49854789572255,
+        "lng": 36.30121806504798,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_36",
+        "type": "Ambulance",
+        "lat": 33.50693503742461,
+        "lng": 36.32304153108465,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_37",
+        "type": "Ambulance",
+        "lat": 33.51270181494016,
+        "lng": 36.31812744331261,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_38",
+        "type": "Ambulance",
+        "lat": 33.48815524228252,
+        "lng": 36.27144172056057,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_39",
+        "type": "Ambulance",
+        "lat": 33.50921703974663,
+        "lng": 36.3214817754091,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_40",
+        "type": "Ambulance",
+        "lat": 33.5228843026626,
+        "lng": 36.27459440764716,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_41",
+        "type": "Ambulance",
+        "lat": 33.50874113908451,
+        "lng": 36.29703595514388,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_42",
+        "type": "Ambulance",
+        "lat": 33.50754804416675,
+        "lng": 36.28333049148086,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_43",
+        "type": "Ambulance",
+        "lat": 33.49252155763423,
+        "lng": 36.31109547392311,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_44",
+        "type": "Ambulance",
+        "lat": 33.51765931382455,
+        "lng": 36.31657303064028,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_45",
+        "type": "Ambulance",
+        "lat": 33.50147387389345,
+        "lng": 36.33595857724173,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_46",
+        "type": "Ambulance",
+        "lat": 33.49787979883206,
+        "lng": 36.33589542054931,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_47",
+        "type": "Ambulance",
+        "lat": 33.5189684475887,
+        "lng": 36.28093598709336,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_48",
+        "type": "Ambulance",
+        "lat": 33.50960220865846,
+        "lng": 36.31510022254015,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_49",
+        "type": "Ambulance",
+        "lat": 33.52551461142392,
+        "lng": 36.28952175488628,
+        "stationId": 1
+    },
+    {
+        "name": "AMBULANCE_50",
+        "type": "Ambulance",
+        "lat": 33.50140932547318,
+        "lng": 36.30358563310919,
+        "stationId": 1
+    }
+]
+}
