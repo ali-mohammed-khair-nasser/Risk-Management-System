@@ -10,7 +10,8 @@ export const initLocationsAndCameras = ( responsesData ) => {
         type: actionTypes.GET_ALL_ELEMENTS,
         paylod: {
             Locations: Object.keys( responsesData[ 0 ].data.data ).map( ( key ) => ({ ...responsesData[ 0 ].data.data[ key ] })),
-            Cameras: Object.keys( responsesData[ 1 ].data.data ).map( ( key ) => ({ ...responsesData[ 1 ].data.data[ key ] }))
+            Cameras: Object.keys( responsesData[ 1 ].data.data ).map( ( key ) => ({ ...responsesData[ 1 ].data.data[ key ] })),
+            Cars: Object.keys( responsesData[ 2 ].data.data ).map( ( key ) => ({ ...responsesData[ 2 ].data.data[ key ] }))
         }
     }
 };
@@ -23,7 +24,7 @@ export const initLocationsAndCameras = ( responsesData ) => {
 export const getAllElements = () => {
     return ( dispatch ) => {
         axios.all([
-            axios.get('http://localhost:8080/api/station'), axios.get('http://localhost:8080/api/camera')
+            axios.get('http://localhost:8080/api/station'), axios.get('http://localhost:8080/api/camera'), axios.get('http://localhost:8080/api/element')
         ]).then(axios.spread((...responses) => {
             dispatch(initLocationsAndCameras(responses));
         })).catch( ( errors ) => { console.log(errors); });

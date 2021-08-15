@@ -12,7 +12,7 @@ import SearchLocation from '../SearchLocation/SearchLocation';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
 // import { Element } from '../../assets/data.json';
-// import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
+import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
 // import EditEvent from '../../components/EditEvent/EditEvent';
 
@@ -274,6 +274,23 @@ class MainMap extends Component {
                             return ( <Marker position={[ location.lat, location.lng ]} icon={ markerIcon } key={ location.id }><Popup><PopupContent centerInformation={ location } /></Popup></Marker> );
                         })
                     }
+                    {
+                        // Loop throw cars elements data and display it on the map
+                        this.props.cars.map( (car) => {
+                            // Choose the right icon based on the type of the car to show it as a marker
+                            // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
+                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ 0, 0 ], iconAnchor: [ -42, 20 ], iconSize: [ 10, 10 ] });
+                            // Change the color of road based on the car type
+                            // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
+                            let iconColor = "";
+                            switch( car.type ) {
+                                case 'PoliceCar': iconColor = '#53DB93'; break;
+                                case 'Ambulance': iconColor = '#6FA1EC'; break;
+                                default: iconColor = '#EC6F6F';
+                            }
+                            return ( <Marker position={[ car.lat, car.lng ]} icon={ carIcon } key={ car.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } /></Popup></Marker> );
+                        })
+                    }
                 </Map>
                 <Button className="circle-button circle-button-closed" id="circle-button" aria-label="Add Event" onClick={ this.addEventPanel }><Iconly name="ChevronUp" label="Chevron Up" size={ 24 } /></Button>
                 <Container fluid className="add-event-closed overflow-toggle-class" id="add-event">
@@ -319,5 +336,5 @@ class MainMap extends Component {
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = ( state ) => ({ locations: state.elements.locations, cameras: state.elements.cameras });
+const mapStateToProps = ( state ) => ({ locations: state.elements.locations, cameras: state.elements.cameras, cars: state.elements.cars });
 export default connect(mapStateToProps)(MainMap);

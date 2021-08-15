@@ -10,13 +10,14 @@ import { updateState } from '../utilities';
 const initialState = {
     locations: [],
     cameras: [],
+    cars: [],
     addNewCenter: false,
     deleteCenter: false 
 };
 
 const elementsReducer = ( state = initialState, action ) => {
     switch( action.type ) {
-        case actionTypes.GET_ALL_ELEMENTS: return updateState(state, { locations: action.paylod.Locations, cameras: action.paylod.Cameras });
+        case actionTypes.GET_ALL_ELEMENTS: return updateState(state, { locations: action.paylod.Locations, cameras: action.paylod.Cameras, cars: action.paylod.Cars });
         case actionTypes.ADDING_NEW_ELEMENT_BACKDROP: return updateState(state, { addNewCenter: true });
         case actionTypes.DELETE_ELEMENT_BACKDROP: return updateState(state, { deleteCenter: true });
         case actionTypes.HIDE_BACKDROP: return updateState(state, { addNewCenter: false, deleteCenter: false });
