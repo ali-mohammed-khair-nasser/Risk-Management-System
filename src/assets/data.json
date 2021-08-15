@@ -352,352 +352,352 @@
     {
         "name": "FIRECAR_1",
         "type": "FireCar",
-        "lat": 33.49478948806379,
-        "lng": 36.30801369620017,
-        "stationId": 1
+        "lat": 33.50785456005411,
+        "lng": 36.29418609295949,
+        "stationId": 6
     },
     {
         "name": "FIRECAR_2",
         "type": "FireCar",
-        "lat": 33.51600770513512,
-        "lng": 36.28549609693557,
-        "stationId": 1
+        "lat": 33.51779794297583,
+        "lng": 36.3392056285861,
+        "stationId": 6
     },
     {
         "name": "FIRECAR_3",
         "type": "FireCar",
-        "lat": 33.50663075091637,
-        "lng": 36.32194366576977,
-        "stationId": 1
+        "lat": 33.49459200807766,
+        "lng": 36.32674358964423,
+        "stationId": 6
     },
     {
         "name": "FIRECAR_4",
         "type": "FireCar",
-        "lat": 33.5130291345133,
-        "lng": 36.27908095359787,
-        "stationId": 1
+        "lat": 33.49196155210385,
+        "lng": 36.32751412845086,
+        "stationId": 6
     },
     {
         "name": "FIRECAR_5",
         "type": "FireCar",
-        "lat": 33.51216224075849,
-        "lng": 36.29563927721134,
-        "stationId": 1
+        "lat": 33.48927613316254,
+        "lng": 36.27483413290476,
+        "stationId": 5
     },
     {
         "name": "FIRECAR_6",
         "type": "FireCar",
-        "lat": 33.51237491660386,
-        "lng": 36.29463349800325,
-        "stationId": 1
+        "lat": 33.50890902125465,
+        "lng": 36.26378536430574,
+        "stationId": 7
     },
     {
         "name": "FIRECAR_7",
         "type": "FireCar",
-        "lat": 33.51300264686687,
-        "lng": 36.32492702298301,
-        "stationId": 1
+        "lat": 33.52729671470141,
+        "lng": 36.29284672666774,
+        "stationId": 7
     },
     {
         "name": "FIRECAR_8",
         "type": "FireCar",
-        "lat": 33.50885455571314,
-        "lng": 36.33764296106072,
-        "stationId": 1
+        "lat": 33.51632382235379,
+        "lng": 36.26710711412375,
+        "stationId": 8
     },
     {
         "name": "FIRECAR_9",
         "type": "FireCar",
-        "lat": 33.52478936798099,
-        "lng": 36.30215907444787,
-        "stationId": 1
+        "lat": 33.5139518040237,
+        "lng": 36.27734085616263,
+        "stationId": 7
     },
     {
         "name": "FIRECAR_10",
         "type": "FireCar",
-        "lat": 33.50611544666554,
-        "lng": 36.27971133291175,
-        "stationId": 1
+        "lat": 33.50108110953749,
+        "lng": 36.31645924258731,
+        "stationId": 8
     },
     {
         "name": "FIRECAR_11",
         "type": "FireCar",
-        "lat": 33.52363778207521,
-        "lng": 36.29520588952692,
-        "stationId": 1
+        "lat": 33.51303188045515,
+        "lng": 36.31333413755265,
+        "stationId": 6
     },
     {
         "name": "FIRECAR_12",
         "type": "FireCar",
-        "lat": 33.50649526976422,
-        "lng": 36.28782181566266,
-        "stationId": 1
+        "lat": 33.50158318046455,
+        "lng": 36.280452142794,
+        "stationId": 5
     },
     {
         "name": "FIRECAR_13",
         "type": "FireCar",
-        "lat": 33.50383207931807,
-        "lng": 36.32438871666258,
-        "stationId": 1
+        "lat": 33.52609028654191,
+        "lng": 36.27314071725014,
+        "stationId": 5
     },
     {
         "name": "FIRECAR_14",
         "type": "FireCar",
-        "lat": 33.51214823630024,
-        "lng": 36.27289514979357,
-        "stationId": 1
+        "lat": 33.49218754880282,
+        "lng": 36.32387453766499,
+        "stationId": 5
     },
     {
         "name": "FIRECAR_15",
         "type": "FireCar",
-        "lat": 33.51757284093256,
-        "lng": 36.3381622619892,
-        "stationId": 1
+        "lat": 33.51862431536854,
+        "lng": 36.28163703162392,
+        "stationId": 5
     },
     {
         "name": "FIRECAR_16",
         "type": "FireCar",
-        "lat": 33.52658768152389,
-        "lng": 36.32542910010002,
-        "stationId": 1
+        "lat": 33.50846016845703,
+        "lng": 36.30672556816852,
+        "stationId": 6
     },
     {
         "name": "POLICECAR_17",
         "type": "PoliceCar",
-        "lat": 33.49788578664904,
-        "lng": 36.30988357119806,
-        "stationId": 1
+        "lat": 33.52626351726396,
+        "lng": 36.28111109653906,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_18",
         "type": "PoliceCar",
-        "lat": 33.49738407890885,
-        "lng": 36.29310601500424,
-        "stationId": 1
+        "lat": 33.49723743208489,
+        "lng": 36.29051351939717,
+        "stationId": 3
     },
     {
         "name": "POLICECAR_19",
         "type": "PoliceCar",
-        "lat": 33.51574524484082,
-        "lng": 36.32058672379917,
-        "stationId": 1
+        "lat": 33.52394114494493,
+        "lng": 36.33394082586049,
+        "stationId": 3
     },
     {
         "name": "POLICECAR_20",
         "type": "PoliceCar",
-        "lat": 33.51051676541163,
-        "lng": 36.31683913485697,
-        "stationId": 1
+        "lat": 33.49242282178261,
+        "lng": 36.28361178402941,
+        "stationId": 4
     },
     {
         "name": "POLICECAR_21",
         "type": "PoliceCar",
-        "lat": 33.51374850075867,
-        "lng": 36.26272005629482,
-        "stationId": 1
+        "lat": 33.50804271433068,
+        "lng": 36.31243446437757,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_22",
         "type": "PoliceCar",
-        "lat": 33.51848751642832,
-        "lng": 36.29371106761376,
-        "stationId": 1
+        "lat": 33.49471093837544,
+        "lng": 36.28509351069501,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_23",
         "type": "PoliceCar",
-        "lat": 33.49750063979729,
-        "lng": 36.27151174610689,
-        "stationId": 1
+        "lat": 33.51185527865429,
+        "lng": 36.3323060361681,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_24",
         "type": "PoliceCar",
-        "lat": 33.51261366657123,
-        "lng": 36.29330537501836,
-        "stationId": 1
+        "lat": 33.48828710440587,
+        "lng": 36.33067834480006,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_25",
         "type": "PoliceCar",
-        "lat": 33.51163481028613,
-        "lng": 36.27041782198032,
+        "lat": 33.5150891156776,
+        "lng": 36.26991443302398,
         "stationId": 1
     },
     {
         "name": "POLICECAR_26",
         "type": "PoliceCar",
-        "lat": 33.5034366338478,
-        "lng": 36.31628117671045,
+        "lat": 33.49011763648253,
+        "lng": 36.30913142264266,
         "stationId": 1
     },
     {
         "name": "POLICECAR_27",
         "type": "PoliceCar",
-        "lat": 33.51371085423134,
-        "lng": 36.28696024030094,
+        "lat": 33.4936627872409,
+        "lng": 36.32213643823713,
         "stationId": 1
     },
     {
         "name": "POLICECAR_28",
         "type": "PoliceCar",
-        "lat": 33.49821506469237,
-        "lng": 36.30279695095531,
+        "lat": 33.49204965664267,
+        "lng": 36.3027726300247,
         "stationId": 1
     },
     {
         "name": "POLICECAR_29",
         "type": "PoliceCar",
-        "lat": 33.50118359396373,
-        "lng": 36.30143211452877,
-        "stationId": 1
+        "lat": 33.51447745832687,
+        "lng": 36.28102530098219,
+        "stationId": 4
     },
     {
         "name": "POLICECAR_30",
         "type": "PoliceCar",
-        "lat": 33.49891987540163,
-        "lng": 36.30401767950046,
+        "lat": 33.50838156685971,
+        "lng": 36.28107660568321,
         "stationId": 1
     },
     {
         "name": "POLICECAR_31",
         "type": "PoliceCar",
-        "lat": 33.49155236412475,
-        "lng": 36.30911006320746,
+        "lat": 33.51519821866057,
+        "lng": 36.26629573085396,
         "stationId": 1
     },
     {
         "name": "POLICECAR_32",
         "type": "PoliceCar",
-        "lat": 33.49577674649829,
-        "lng": 36.29078799999438,
-        "stationId": 1
+        "lat": 33.49919424818084,
+        "lng": 36.29079270956214,
+        "stationId": 2
     },
     {
         "name": "POLICECAR_33",
         "type": "PoliceCar",
-        "lat": 33.50858222308471,
-        "lng": 36.30535766301747,
-        "stationId": 1
+        "lat": 33.50961876603672,
+        "lng": 36.31250944300498,
+        "stationId": 3
     },
     {
         "name": "AMBULANCE_34",
         "type": "Ambulance",
-        "lat": 33.49298614735319,
-        "lng": 36.32015823967922,
-        "stationId": 1
+        "lat": 33.50725060584713,
+        "lng": 36.33171391019253,
+        "stationId": 11
     },
     {
         "name": "AMBULANCE_35",
         "type": "Ambulance",
-        "lat": 33.49854789572255,
-        "lng": 36.30121806504798,
-        "stationId": 1
+        "lat": 33.49471630652206,
+        "lng": 36.26631650515787,
+        "stationId": 11
     },
     {
         "name": "AMBULANCE_36",
         "type": "Ambulance",
-        "lat": 33.50693503742461,
-        "lng": 36.32304153108465,
-        "stationId": 1
+        "lat": 33.5023267778818,
+        "lng": 36.2895132703178,
+        "stationId": 12
     },
     {
         "name": "AMBULANCE_37",
         "type": "Ambulance",
-        "lat": 33.51270181494016,
-        "lng": 36.31812744331261,
-        "stationId": 1
+        "lat": 33.51545433243026,
+        "lng": 36.27954154542842,
+        "stationId": 11
     },
     {
         "name": "AMBULANCE_38",
         "type": "Ambulance",
-        "lat": 33.48815524228252,
-        "lng": 36.27144172056057,
-        "stationId": 1
+        "lat": 33.51088480499754,
+        "lng": 36.31030693831314,
+        "stationId": 9
     },
     {
         "name": "AMBULANCE_39",
         "type": "Ambulance",
-        "lat": 33.50921703974663,
-        "lng": 36.3214817754091,
-        "stationId": 1
+        "lat": 33.51089007610364,
+        "lng": 36.30141789474282,
+        "stationId": 9
     },
     {
         "name": "AMBULANCE_40",
         "type": "Ambulance",
-        "lat": 33.5228843026626,
-        "lng": 36.27459440764716,
-        "stationId": 1
+        "lat": 33.49096031158034,
+        "lng": 36.27484892494827,
+        "stationId": 9
     },
     {
         "name": "AMBULANCE_41",
         "type": "Ambulance",
-        "lat": 33.50874113908451,
-        "lng": 36.29703595514388,
-        "stationId": 1
+        "lat": 33.52485442284422,
+        "lng": 36.32714634013855,
+        "stationId": 10
     },
     {
         "name": "AMBULANCE_42",
         "type": "Ambulance",
-        "lat": 33.50754804416675,
-        "lng": 36.28333049148086,
-        "stationId": 1
+        "lat": 33.4993842596114,
+        "lng": 36.32217591432335,
+        "stationId": 12
     },
     {
         "name": "AMBULANCE_43",
         "type": "Ambulance",
-        "lat": 33.49252155763423,
-        "lng": 36.31109547392311,
-        "stationId": 1
+        "lat": 33.50566708042221,
+        "lng": 36.30783451395516,
+        "stationId": 11
     },
     {
         "name": "AMBULANCE_44",
         "type": "Ambulance",
-        "lat": 33.51765931382455,
-        "lng": 36.31657303064028,
-        "stationId": 1
+        "lat": 33.50022192139887,
+        "lng": 36.29485198131022,
+        "stationId": 9
     },
     {
         "name": "AMBULANCE_45",
         "type": "Ambulance",
-        "lat": 33.50147387389345,
-        "lng": 36.33595857724173,
-        "stationId": 1
+        "lat": 33.52745677754251,
+        "lng": 36.30627251260281,
+        "stationId": 11
     },
     {
         "name": "AMBULANCE_46",
         "type": "Ambulance",
-        "lat": 33.49787979883206,
-        "lng": 36.33589542054931,
-        "stationId": 1
+        "lat": 33.50162759142203,
+        "lng": 36.32562819782646,
+        "stationId": 13
     },
     {
         "name": "AMBULANCE_47",
         "type": "Ambulance",
-        "lat": 33.5189684475887,
-        "lng": 36.28093598709336,
-        "stationId": 1
+        "lat": 33.51588252672839,
+        "lng": 36.29732282532878,
+        "stationId": 13
     },
     {
         "name": "AMBULANCE_48",
         "type": "Ambulance",
-        "lat": 33.50960220865846,
-        "lng": 36.31510022254015,
-        "stationId": 1
+        "lat": 33.5011007210757,
+        "lng": 36.28217705441966,
+        "stationId": 10
     },
     {
         "name": "AMBULANCE_49",
         "type": "Ambulance",
-        "lat": 33.52551461142392,
-        "lng": 36.28952175488628,
-        "stationId": 1
+        "lat": 33.51475449105846,
+        "lng": 36.29915072212134,
+        "stationId": 10
     },
     {
         "name": "AMBULANCE_50",
         "type": "Ambulance",
-        "lat": 33.50140932547318,
-        "lng": 36.30358563310919,
-        "stationId": 1
+        "lat": 33.51716511294517,
+        "lng": 36.32745650981637,
+        "stationId": 10
     }
 ]
 }

@@ -11,9 +11,9 @@ import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import SearchLocation from '../SearchLocation/SearchLocation';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
-import { Element } from '../../assets/data.json';
-import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
-// import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
+// import { Element } from '../../assets/data.json';
+// import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
+import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
 // import EditEvent from '../../components/EditEvent/EditEvent';
 
 // Change the default marker icon
@@ -193,35 +193,40 @@ class MainMap extends Component {
             // setTimeout(() => { this.map.leafletElement.removeLayer(this.state.MapMarker); }, 1300);
             axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
                 if ( response ) {
-                    console.log( response.data );
                     // Change the default marker icon based on event type [ The same in the colors :) ]
-                    // delete Leaflet.Icon.Default.prototype._getIconUrl;
-                    // Leaflet.Icon.Default.mergeOptions({
-                    //     iconRetinaUrl: "", iconUrl: require( `../../assets/images/CarMarker${ eventInformation.type }.svg` ).default, shadowUrl: '',
-                    //     iconAnchor: [ 8, 8 ], iconSize: [ 15, 15 ], popupAnchor: [ -48, 22 ]
-                    // });
+                    let Cartype;
+                    if( eventInformation.type === "Fire" ) Cartype = 'FireCar';
+                    else if( eventInformation.type === "Violence" ) Cartype = 'PoliceCar';
+                    else Cartype = 'Ambulance';
+                    delete Leaflet.Icon.Default.prototype._getIconUrl;
+                    Leaflet.Icon.Default.mergeOptions({
+                        iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ Cartype }Marker.svg` ).default, shadowUrl: '',
+                        popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
+                    });
 
-                    // // Reverce the path array becouse we get that langtude before the lattitude from the server
-                    // let reversedPath = response.data.data.routData.path.map(function reverse(item) {
-                    //     return Array.isArray(item) && Array.isArray(item[0]) ? item.map( reverse ) : item.reverse();
-                    // });
+                    // Loop through all cars and render each car path and move it on that path
+                    response.data.data.elements.forEach( (element) => {
+                        // Reverce the path array becouse we get that langtude before the lattitude from the server
+                        let reversedPath = element.reaction.path.map(function reverse(item) {
+                            return Array.isArray(item) && Array.isArray(item[0]) ? item.map( reverse ) : item.reverse();
+                        });
 
-                    // Change the color of road based on the event type
-                    // [ Fire => Red | Fighting => Green | Medical Event => Blue ]
-                    // let iconColor = "";
-                    // switch( eventInformation.type ) {
-                    //     case 'Violence': iconColor = '#53DB93'; break;
-                    //     case 'Medical': iconColor = '#6FA1EC'; break;
-                    //     default: iconColor = '#EC6F6F';
-                    // }
+                        // Change the color of road based on the event type
+                        // [ Fire => Red | Fighting => Green | Medical Event => Blue ]
+                        let iconColor = "";
+                        switch( element.type ) {
+                            case 'PoliceCar': iconColor = '#53DB93'; break;
+                            case 'Ambulance': iconColor = '#6FA1EC'; break;
+                            default: iconColor = '#EC6F6F';
+                        }
 
-                    // // Drawing the route path on the map then fit the map zoom to it
-                    // let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.3 }).addTo(map);
-                    // map.addLayer(path);
-                    // // map.fitBounds(path.getBounds());
+                        // Drawing the route path on the map then fit the map zoom to it
+                        let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.3 }).addTo(map);
+                        map.addLayer(path);
 
-                    // // Use the moving marker script to move the car marker on this coordinates smothly :)
-                    // movingMarkerFunction( map, reversedPath, response.data.data.routData.distance, response.data.data.routData.duration, { autostart: true }, iconColor );
+                        // Use the moving marker script to move the car marker on this coordinates smothly :)
+                        movingMarkerFunction( map, reversedPath, element.reaction.distance, element.reaction.duration, { autostart: true }, iconColor );
+                    });
                 }}).catch( ( error ) => { console.log( error ); } );
         }
     }
@@ -267,23 +272,6 @@ class MainMap extends Component {
                             // Then add this markers to the map in the right posation with popup include all information about that center which comming from database
                             let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ location.type }.svg` ).default, popupAnchor: [ 0, -20 ], iconAnchor: [ 20, 20 ] });
                             return ( <Marker position={[ location.lat, location.lng ]} icon={ markerIcon } key={ location.id }><Popup><PopupContent centerInformation={ location } /></Popup></Marker> );
-                        })
-                    }
-                    {
-                        // Loop throw cars elements data and display it on the map
-                        Element.map( (car) => {
-                            // Choose the right icon based on the type of the car to show it as a marker
-                            // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
-                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ 0, 0 ], iconAnchor: [ -42, 20 ], iconSize: [ 10, 10 ] });
-                            // Change the color of road based on the car type
-                            // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
-                            let iconColor = "";
-                            switch( car.type ) {
-                                case 'PoliceCar': iconColor = '#53DB93'; break;
-                                case 'Ambulance': iconColor = '#6FA1EC'; break;
-                                default: iconColor = '#EC6F6F';
-                            }
-                            return ( <Marker position={[ car.lat, car.lng ]} icon={ carIcon } key={ car.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } /></Popup></Marker> );
                         })
                     }
                 </Map>
