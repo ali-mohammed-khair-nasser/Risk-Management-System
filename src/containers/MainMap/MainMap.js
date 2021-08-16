@@ -193,17 +193,6 @@ class MainMap extends Component {
             // setTimeout(() => { this.map.leafletElement.removeLayer(this.state.MapMarker); }, 1300);
             axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
                 if ( response ) {
-                    // Change the default marker icon based on event type [ The same in the colors :) ]
-                    let Cartype;
-                    if( eventInformation.type === "Fire" ) Cartype = 'FireCar';
-                    else if( eventInformation.type === "Violence" ) Cartype = 'PoliceCar';
-                    else Cartype = 'Ambulance';
-                    delete Leaflet.Icon.Default.prototype._getIconUrl;
-                    Leaflet.Icon.Default.mergeOptions({
-                        iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ Cartype }Marker.svg` ).default, shadowUrl: '',
-                        popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
-                    });
-
                     // Loop through all cars and render each car path and move it on that path
                     response.data.data.elements.forEach( (element) => {
                         // Reverce the path array becouse we get that langtude before the lattitude from the server
@@ -220,8 +209,14 @@ class MainMap extends Component {
                             default: iconColor = '#EC6F6F';
                         }
 
+                        delete Leaflet.Icon.Default.prototype._getIconUrl;
+                        Leaflet.Icon.Default.mergeOptions({
+                            iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ element.type }Marker.svg` ).default, shadowUrl: '',
+                            popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
+                        });
+
                         // Drawing the route path on the map then fit the map zoom to it
-                        let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.3 }).addTo(map);
+                        let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.5 }).addTo(map);
                         map.addLayer(path);
 
                         // Use the moving marker script to move the car marker on this coordinates smothly :)
@@ -279,7 +274,7 @@ class MainMap extends Component {
                         this.props.cars.map( (car) => {
                             // Choose the right icon based on the type of the car to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
-                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ 0, 0 ], iconAnchor: [ -42, 20 ], iconSize: [ 10, 10 ] });
+                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
                             // Change the color of road based on the car type
                             // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
                             let iconColor = "";
