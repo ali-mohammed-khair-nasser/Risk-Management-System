@@ -273,7 +273,7 @@ class MainMap extends Component {
                         this.props.cars.map( (car) => {
                             // Choose the right icon based on the type of the car to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
-                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
+                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
                             // Change the color of road based on the car type
                             // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
                             let iconColor = "";
