@@ -211,7 +211,7 @@ class MainMap extends Component {
                         delete Leaflet.Icon.Default.prototype._getIconUrl;
                         Leaflet.Icon.Default.mergeOptions({
                             iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ element.type }Marker.svg` ).default, shadowUrl: '',
-                            popupAnchor: [ -48, 22 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
+                            popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
                         });
 
                         // Drawing the route path on the map then fit the map zoom to it

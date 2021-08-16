@@ -9,10 +9,10 @@ const CarPopupContent = ( props ) => (
         <div className="current-car-info">
             <Container>
                 <Row>
-                    <Col md="4" className="progress-bar"><RoundedProgressBar progress={ 64 } time="16 min" distance="9.3 km" /></Col>
+                    <Col md="4" className="progress-bar"><RoundedProgressBar progress={ 64 } time={ props.neddedTime } distance={ props.neededDistance } /></Col>
                     <Col className="car-info">
                         <h5 className="title">Vehicle information</h5>
-                        <p className="meta-info"><span><span className="circle"></span> Status:</span> going to event.</p>
+                        <p className="meta-info"><span><span className="circle"></span> Status:</span> going to event</p>
                         <p className="meta-info"><span><span className="circle"></span> Name:</span> AMBULANCE_48</p>
                         <p className="meta-info"><span><span className="circle"></span> Center:</span> Alassad University Hospital</p>
                     </Col>
