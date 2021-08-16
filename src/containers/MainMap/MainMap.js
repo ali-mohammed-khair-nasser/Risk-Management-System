@@ -11,7 +11,6 @@ import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import SearchLocation from '../SearchLocation/SearchLocation';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
-// import { Element } from '../../assets/data.json';
 import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
 // import EditEvent from '../../components/EditEvent/EditEvent';
