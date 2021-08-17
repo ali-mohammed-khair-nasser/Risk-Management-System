@@ -238,14 +238,14 @@ const timeConvertor = ( duration ) => {
     return hours + ':' + minutes + ':' + seconds + ' hrs';
 }
 
-const movingMarkerFunction = ( map, latlngs, totalDistance, totalTime, options, iconColor ) => {
+const movingMarkerFunction = ( map, latlngs, element, options, iconColor ) => {
     // Calculate the right needed time and distance between the action center and the event
-    const duration = timeConvertor( totalTime * 1000 );
-    const distance = ( totalDistance / 1000 ).toFixed(1) + ' km';
+    const duration = timeConvertor( element.reaction.duration * 1000 );
+    const distance = ( element.reaction.distance / 1000 ).toFixed(1) + ' km';
 
     // Moving the marker smothly from the action center to the event
     // We display an popup contains the needed time and the distance between the action center and the event
-    L.Marker.movingMarker( latlngs, totalTime*1000, options ).addTo( map ).bindPopup(ReactDOMServer.renderToString( <CarPopupContent iconcolor={ iconColor } neddedTime={ duration } neededDistance={ distance } />), { className: 'car-popup' } );
+    L.Marker.movingMarker( latlngs, element.reaction.duration*1000, options ).addTo( map ).bindPopup(ReactDOMServer.renderToString( <CarPopupContent iconcolor={ iconColor } neddedTime={ duration } neededDistance={ distance } elementInfo={ element } />), { className: 'car-popup' } );
 } 
 
 export default movingMarkerFunction;

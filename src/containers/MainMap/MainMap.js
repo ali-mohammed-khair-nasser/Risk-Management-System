@@ -219,7 +219,7 @@ class MainMap extends Component {
                         map.addLayer(path);
 
                         // Use the moving marker script to move the car marker on this coordinates smothly :)
-                        movingMarkerFunction( map, reversedPath, element.reaction.distance, element.reaction.duration, { autostart: true }, iconColor );
+                        movingMarkerFunction( map, reversedPath, element, { autostart: true }, iconColor );
                     });
                 }}).catch( ( error ) => { console.log( error ); } );
         }
@@ -282,7 +282,7 @@ class MainMap extends Component {
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
-                            return ( <Marker position={[ car.lat, car.lng ]} icon={ carIcon } key={ car.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } /></Popup></Marker> );
+                            return ( <Marker position={[ car.lat, car.lng ]} icon={ carIcon } key={ car.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car } /></Popup></Marker> );
                         })
                     }
                 </Map>
