@@ -1,15 +1,15 @@
 // Importing general style
 @import '../../assets/css/generalStyle';
 
-.car-popup { width: 500px!important; display: block;
+.car-popup { width: 440px!important; display: block;
     .leaflet-popup-content { padding: 10px 5px!important; margin-bottom: 5px!important; }
     // Car popup content styles
-    .car-popup-content { overflow: hidden; width: 100%; padding-right: 85px;
+    .car-popup-content { overflow: hidden; width: 100%; padding-right: 150px;
         // Reset leaflet default styles
         .leaflet-popup-tip-container, .leaflet-routing-container { display: block!important; position: relative!important; margin-left: 27px; } 
 
         // Progress bar styles ( the half circle progress bar )
-        .progress-bar { overflow: hidden; padding: 0; margin-top: -15px; background-color: transparent; margin-right: 12px;
+        .progress-bar { overflow: hidden; padding: 0; margin-top: -15px; background-color: transparent; margin-right: 8px; margin-left: -5px;
             .RCP { width: 95%!important; }
             svg { width: 100%!important; height: 180px!important; position: relative; left: 0; top: 0; }
             .remaining-time-and-distance { color: $--color-white; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% ); width: 100%; letter-spacing: -1px; text-align: center;
@@ -21,8 +21,8 @@
         // Current event information styles
         .current-car-info { border-bottom: $--border-opacity; margin-bottom: 20px;
             .car-info { padding-left: 0; margin-left: -2px;
-                .title { color: $--color-white; font-size: 22px; text-transform: uppercase; margin-bottom: -5px; margin-top: 10px; }
-                .meta-info { margin-bottom: -8px; color: $--color-light-gray; letter-spacing: .1px; font-size: 15px;
+                .title { color: $--color-white; font-size: 18px; text-transform: uppercase; margin-bottom: -5px; margin-top: 18px; }
+                .meta-info { margin-bottom: -8px; color: $--color-light-gray; letter-spacing: .1px; font-size: 14px; text-transform: capitalize;
                     span { color: $--color-green; font-weight: 500; }
                     .circle { width: 10px; height: 10px; display: inline-block; background-color: $--color-green; @include add_prefixes( border-radius, 50%); margin-right: 3px; }
                 }
