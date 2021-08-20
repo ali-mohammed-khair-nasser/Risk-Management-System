@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './AddEventPanel.scss';
 import Leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -8,7 +8,6 @@ import { Iconly } from 'react-iconly';
 import { Button, RadioButton, Input, TextArea } from '../../components/UIElements/FormElements/FormElements';
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import SearchLocation from '../SearchLocation/SearchLocation';
-import { Fragment } from 'react';
 
 class AddEventPanel extends Component {
     // Component state contents:
