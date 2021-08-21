@@ -29,6 +29,5 @@ class App extends Component {
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = ( state ) => ({ locations: state.elements.locations, cameras: state.elements.cameras });
 const mapDispatchToProps = ( dispatch ) => ({ updateData: () => dispatch(actions.getAllElements()) });
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

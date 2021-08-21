@@ -9,13 +9,13 @@ import Leaflet from 'leaflet';
 const provider = new AlgoliaProvider();
 
 // Change the default marker icon to location icon
-const changeMarkerIcon = () => {
+const changeMarkerIcon = (searchLocationName) => {
     delete Leaflet.Icon.Default.prototype._getIconUrl;
     Leaflet.Icon.Default.mergeOptions({
         iconRetinaUrl: '',
-        iconUrl: require( '../../assets/images/LocationMarker.svg' ).default,
+        iconUrl: require( searchLocationName === 'eventLocation' ? '../../assets/images/EventMarker.svg' : '../../assets/images/LocationMarker.svg' ).default,
         shadowUrl: '',
-        iconSize: [ 25, 41 ],
+        iconSize: [ 35, 35 ],
         iconAnchor: [ 15, 35 ],
         popupAnchor: [ 0, 0 ]
     });
@@ -30,10 +30,10 @@ const changeMarkerIcon = () => {
 // Handle remove marker and add new one in new position on map click
 // Handle marker dragging
 // After handling all of that options then our state will contain the right marker position and we can use it when we pass the data to the database
-const markerHandler = ( map, marker, latitude, langtude, setLocationHandler ) => {
+const markerHandler = ( map, marker, latitude, langtude, setLocationHandler, locatingType ) => {
 
     // Change the default marker icon to location icon
-    changeMarkerIcon();
+    changeMarkerIcon(locatingType);
 
     let locationLatLng = null;
     const results = new Leaflet.LayerGroup().addTo( map );
@@ -57,7 +57,7 @@ const markerHandler = ( map, marker, latitude, langtude, setLocationHandler ) =>
         // Finally we set our state to the new position
         map.on( 'click', ( event ) => {
             // Change the default marker icon to location icon
-            changeMarkerIcon();
+            changeMarkerIcon(locatingType);
 
             if ( marker !== null ) map.removeLayer( marker );
             marker = new Leaflet.marker( event.latlng, { draggable: true } );
@@ -123,7 +123,7 @@ class SearchLocation extends Component {
     // This function get the selected location information then add a marker on it's lat and lng on the map
     locateButtonClickHandle = ( event ) => {
         event.preventDefault(); // Prevent button click defaults becouse we want to handle the request by javascript
-        markerHandler( this.props.mapReferance.leafletElement, this.props.mapMarker ? this.props.mapMarker : null, this.state.selectedLocation.position.lat, this.state.selectedLocation.position.lng, this.props.getLocationHandler );
+        markerHandler( this.props.mapReferance.leafletElement, this.props.mapMarker ? this.props.mapMarker : null, this.state.selectedLocation.position.lat, this.state.selectedLocation.position.lng, this.props.getLocationHandler, this.props.name );
     }
 
     render() {

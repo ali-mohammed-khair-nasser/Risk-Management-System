@@ -8,6 +8,7 @@ import AddEventPanel from '../AddEventPanel/AddEventPanel';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
 import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
+import * as actions from '../../store/actions/index';
 
 class MainMap extends Component {
     // Component state contents:
@@ -24,6 +25,8 @@ class MainMap extends Component {
         this.map = map;
         this.setState({ isMapInit: true });
     }
+    
+    componentDidUpdate() { this.props.updateData(); }
     
     render() {
         return (
@@ -63,13 +66,13 @@ class MainMap extends Component {
                         // Loop throw events data and display it on the map
                         this.props.events.map( ( event ) => {
                             // Create an event icon to show it as a marker for cameras
-                            let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/EventMarker.svg` ).default, popupAnchor: [ 0, 0 ], iconAnchor: [ 0, 0 ], iconSize: [ 35, 35 ] });
+                            let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/EventMarker.svg` ).default, iconSize: [ 35, 35 ], iconAnchor: [ 15, 35 ], popupAnchor: [ 0, 0 ] });
                             return (<Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id } />);
                         })
                     }
                     {
                         // Loop throw cars elements data and display it on the map
-                        this.props.cars.map( (car) => {
+                        this.props.cars.map( (car, index) => {
                             // Choose the right icon based on the type of the car to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
                             let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.carInfo.type }Marker.svg` ).default, popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
@@ -81,13 +84,18 @@ class MainMap extends Component {
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
-                            return (
-                                <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }>
-                                    <Popup className="car-popup">
-                                        <CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } />
-                                    </Popup>
-                                </Marker>
-                            );
+
+                            if( car.carInfo.state === 'InStation' ) { 
+                                return null;
+                            } else {
+                                return (
+                                    <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ index }>
+                                        <Popup className="car-popup">
+                                            <CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } />
+                                        </Popup>
+                                    </Marker>
+                                );
+                            }
                         })
                     }
                 </Map>
@@ -104,4 +112,5 @@ const mapStateToProps = ( state ) => ({
     events: state.elements.events,
     cars: state.elements.cars
 });
-export default connect(mapStateToProps)(MainMap);
+const mapDispatchToProps = ( dispatch ) => ({ updateData: () => dispatch(actions.getAllElements()) });
+export default connect(mapStateToProps, mapDispatchToProps)(MainMap);

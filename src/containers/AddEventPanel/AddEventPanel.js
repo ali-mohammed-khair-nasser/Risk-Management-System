@@ -160,11 +160,11 @@ class AddEventPanel extends Component {
             map.off( 'click' );
             this.state.mapMarker.dragging.disable();
 
-            // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
-            // The finished events will never shown on the map but we can get it from the history tab :)
-            // setTimeout(() => { this.map.leafletElement.removeLayer(this.state.MapMarker); }, 1300);
             axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
                 if ( response ) {
+                    // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
+                    // The finished events will never shown on the map but we can get it from the history tab :)
+                    this.props.mapReferance.leafletElement.removeLayer(this.state.mapMarker);
                     // Loop through all cars and render each car path and move it on that path
                     response.data.data.elements.forEach( (element) => {
                         // Reverce the path array becouse we get that langtude before the lattitude from the server
@@ -194,7 +194,8 @@ class AddEventPanel extends Component {
                         // Use the moving marker script to move the car marker on this coordinates smothly :)
                         movingMarkerFunction( map, reversedPath, element, { autostart: true }, iconColor );
                     });
-                }}).catch( ( error ) => { console.log( error ); } );
+                }
+            }).catch( ( error ) => { console.log( error ); } );
         }
     }
 
