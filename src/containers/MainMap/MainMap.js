@@ -68,19 +68,19 @@ class MainMap extends Component {
                         this.props.cars.map( (car) => {
                             // Choose the right icon based on the type of the car to show it as a marker
                             // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
-                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.type }Marker.svg` ).default, popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
+                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.carInfo.type }Marker.svg` ).default, popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
                             // Change the color of road based on the car type
                             // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
                             let iconColor = "";
-                            switch( car.type ) {
+                            switch( car.carInfo.type ) {
                                 case 'PoliceCar': iconColor = '#53DB93'; break;
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
                             return (
-                                <Marker position={[ car.lat, car.lng ]} icon={ carIcon } key={ car.name }>
+                                <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }>
                                     <Popup className="car-popup">
-                                        <CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car } />
+                                        <CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } />
                                     </Popup>
                                 </Marker>
                             );
