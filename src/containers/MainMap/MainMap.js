@@ -9,14 +9,6 @@ import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
 import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 
-// Change the default marker icon
-delete Leaflet.Icon.Default.prototype._getIconUrl;
-Leaflet.Icon.Default.mergeOptions({
-    iconRetinaUrl: 'https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon-2x.png',
-    iconUrl: require( '../../assets/images/LocationMarker.svg' ).default,
-    shadowUrl: 'https://unpkg.com/leaflet@1.4.0/dist/images/marker-shadow.png'
-});
-
 class MainMap extends Component {
     // Component state contents:
     // =========================
