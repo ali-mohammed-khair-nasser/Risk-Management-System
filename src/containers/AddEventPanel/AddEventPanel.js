@@ -22,6 +22,7 @@ class AddEventPanel extends Component {
     // ===> respond: How many number of cars from each type to send to that event
     // eventRespond: Contains the 3 diffirent types of responding and each type contain the cars and persons number
     state = {
+        mapMarker: null,
         eventInformation: {
             type: 'Fire',
             name: '',
@@ -48,7 +49,7 @@ class AddEventPanel extends Component {
     // We use this function to get the location lat and lang from the search location component
     // So we pass this function to that component and update the state with the new values on it
     getLocationLatLng = ( locationLatLng, mapMarker ) => {
-        this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), lat: locationLatLng.lat, lng: locationLatLng.lng }, mapMarker: mapMarker });
+        this.setState({ mapMarker: mapMarker, eventInformation: { ...Object.assign( {}, this.state.eventInformation ), lat: locationLatLng.lat, lng: locationLatLng.lng } });
     }
 
     // Generate event name function:
@@ -224,7 +225,7 @@ class AddEventPanel extends Component {
                             <h2 className="section-title">Event name</h2>
                             <Input type="text" name="eventName" placeholder="Event_fire_and_smoke_135" autoComplete="off" onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), name: event.target.value } }) } />
                             <h2 className="section-title">Add location</h2>
-                            <SearchLocation name="eventLocation" placeholder="Search for location or click to locate on the map" mapReferance={ this.props.mapReferance } mapMarker={ this.props.mapMarker } getLocationHandler={ this.getLocationLatLng } />
+                            <SearchLocation name="eventLocation" placeholder="Search for location or click to locate on the map" mapReferance={ this.props.mapReferance } mapMarker={ this.state.mapMarker } getLocationHandler={ this.getLocationLatLng } />
                         </Col>
                         <Col className="with-borders">
                             { this.state.eventInformation.type === 'Fire' ? <div><h2 className="section-title">Fire size</h2><RadioButton name="eventSize" defaultselectedvalue="Small" options={{ Small: 'Small', Medium: 'Medium', Large: 'Large' }} onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), size: event.target.value } }) } /></div> : <div><h2 className="section-title">Number of persons</h2><Input style={{ marginBottom: '15px' }} type="text" name="personEngaged" placeholder="The number of persons in that event" autoComplete="off" onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), personEngaged: +event.target.value } }) }/></div> }

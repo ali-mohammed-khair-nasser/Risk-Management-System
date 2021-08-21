@@ -6,15 +6,14 @@ import axios from 'axios';
 // this will dispatch an action to make http request to the server and fitch all locations and cameras data
 // We don't need to export this function because we used only on run the asynchronous code
 export const initLocationsAndCameras = ( responsesData ) => {
-
     let carsArray = [];
     Object.keys( responsesData[ 2 ].data.data ).map( ( key ) => ({ ...responsesData[ 2 ].data.data[ key ] })).forEach( (car) => carsArray.push({ carID: car.id, carInfo: car }));
-
     return {
         type: actionTypes.GET_ALL_ELEMENTS,
         paylod: {
             Locations: Object.keys( responsesData[ 0 ].data.data ).map( ( key ) => ({ ...responsesData[ 0 ].data.data[ key ] })),
             Cameras: Object.keys( responsesData[ 1 ].data.data ).map( ( key ) => ({ ...responsesData[ 1 ].data.data[ key ] })),
+            Events: Object.keys( responsesData[ 3 ].data.data ).map( ( key ) => ({ ...responsesData[ 3 ].data.data[ key ] })),
             Cars: carsArray
         }
     }
@@ -28,7 +27,10 @@ export const initLocationsAndCameras = ( responsesData ) => {
 export const getAllElements = () => {
     return ( dispatch ) => {
         axios.all([
-            axios.get('http://localhost:8080/api/station'), axios.get('http://localhost:8080/api/camera'), axios.get('http://localhost:8080/api/element')
+            axios.get('http://localhost:8080/api/station'),
+            axios.get('http://localhost:8080/api/camera'),
+            axios.get('http://localhost:8080/api/element'),
+            axios.get('http://localhost:8080/api/event')
         ]).then(axios.spread((...responses) => {
             dispatch(initLocationsAndCameras(responses));
         })).catch( ( errors ) => { console.log(errors); });

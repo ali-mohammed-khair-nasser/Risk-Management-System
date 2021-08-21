@@ -13,14 +13,10 @@ class MainMap extends Component {
     // Component state contents:
     // =========================
     // isMapInit: We use it to make sure the map is initialized so we can put routs on it
-    // mapMarker: To use it in the locating the events and change it's options from here
     constructor( props ) {
         super( props );
         this.mainMapRef = this.mainMapRef.bind( this );
-        this.state = {
-            isMapInit: false,
-            mapMarker: null
-        }
+        this.state = { isMapInit: false }
     }
 
     // Create referance for the map
@@ -42,7 +38,7 @@ class MainMap extends Component {
                             return (
                                 <Marker position={[ camera.lat, camera.lng ]} icon={ cameraIcon } key={ camera.id }>
                                     <Popup className="camera-popup">
-                                        <CCTVCamera cameraName={ camera.name } cameraStatus={ true } videoSource={ require( '../../assets/videos/' + camera.streamUrl ).default } autoPlay={ true } muted={ true } loop={ true } /> 
+                                        <CCTVCamera cameraName={ camera.name } cameraStatus={ true } videoSource={ require( '../../assets/videos/' + camera.streamUrl ).default } autoPlay={ true } muted={ true } loop={ true } />
                                     </Popup>
                                 </Marker>
                             );
@@ -61,6 +57,14 @@ class MainMap extends Component {
                                     </Popup>
                                 </Marker>
                             );
+                        })
+                    }
+                    {
+                        // Loop throw events data and display it on the map
+                        this.props.events.map( ( event ) => {
+                            // Create an event icon to show it as a marker for cameras
+                            let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/EventMarker.svg` ).default, popupAnchor: [ 0, 0 ], iconAnchor: [ 0, 0 ], iconSize: [ 35, 35 ] });
+                            return (<Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id } />);
                         })
                     }
                     {
@@ -87,12 +91,17 @@ class MainMap extends Component {
                         })
                     }
                 </Map>
-                <AddEventPanel mapReferance={ this.map } mapMarker={ this.state.mapMarker } />
+                <AddEventPanel mapReferance={ this.map } />
             </div>
         );
     }
 }
 
 // Connect the component to redux store then export it
-const mapStateToProps = ( state ) => ({ locations: state.elements.locations, cameras: state.elements.cameras, cars: state.elements.cars });
+const mapStateToProps = ( state ) => ({
+    locations: state.elements.locations,
+    cameras: state.elements.cameras,
+    events: state.elements.events,
+    cars: state.elements.cars
+});
 export default connect(mapStateToProps)(MainMap);
