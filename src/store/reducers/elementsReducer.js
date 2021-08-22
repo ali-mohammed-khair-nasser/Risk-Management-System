@@ -27,6 +27,7 @@ const elementsReducer = ( state = initialState, action ) => {
         case actionTypes.ADDING_NEW_ELEMENT_BACKDROP: return updateState(state, { addNewCenter: true });
         case actionTypes.DELETE_ELEMENT_BACKDROP: return updateState(state, { deleteCenter: true });
         case actionTypes.HIDE_BACKDROP: return updateState(state, { addNewCenter: false, deleteCenter: false });
+        case actionTypes.UPDATE_CARS_LOCATIONS: return updateState(state, { cars: action.paylod.Cars });
         default: return state;
     }
 };

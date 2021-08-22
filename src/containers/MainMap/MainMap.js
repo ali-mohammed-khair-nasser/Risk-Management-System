@@ -7,7 +7,7 @@ import PopupContent from '../../components/PopupContent/PopupContent';
 import AddEventPanel from '../AddEventPanel/AddEventPanel';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
-// import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
+import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 import * as actions from '../../store/actions/index';
 
 class MainMap extends Component {
@@ -26,7 +26,10 @@ class MainMap extends Component {
         this.setState({ isMapInit: true });
     }
     
-    componentDidUpdate() { this.props.updateData(); }
+    componentDidUpdate() {
+        this.props.updateData();
+        this.props.getCarsNewLocations(this.props.cars);
+    }
     
     render() {
         return (
@@ -70,7 +73,7 @@ class MainMap extends Component {
                             return (<Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id } />);
                         })
                     }
-                    {/* {
+                    {
                         // Loop throw cars elements data and display it on the map
                         this.props.cars.map( (car) => {
                             // Choose the right icon based on the type of the car to show it as a marker
@@ -84,9 +87,9 @@ class MainMap extends Component {
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
-                            return ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } /></Popup></Marker> );
+                            return car.carInfo.state === "InStation" ? null : ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } /></Popup></Marker> );
                         })
-                    } */}
+                    }
                 </Map>
                 <AddEventPanel mapReferance={ this.map } />
             </div>
@@ -101,5 +104,8 @@ const mapStateToProps = ( state ) => ({
     events: state.elements.events,
     cars: state.elements.cars
 });
-const mapDispatchToProps = ( dispatch ) => ({ updateData: () => dispatch(actions.getAllElements()) });
+const mapDispatchToProps = ( dispatch ) => ({
+    updateData: () => dispatch(actions.getAllElements()),
+    getCarsNewLocations: (oldLocations) => dispatch(actions.getCarsLocationFromSocket(oldLocations))
+});
 export default connect(mapStateToProps, mapDispatchToProps)(MainMap);

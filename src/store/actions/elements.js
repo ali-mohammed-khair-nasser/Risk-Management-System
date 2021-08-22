@@ -1,5 +1,8 @@
 import * as actionTypes from './actionTyprs';
 import axios from 'axios';
+import io from "socket.io-client";
+
+const socket = io.connect('localhost:8080');
 
 // Initialize location and cameras action creator function:
 // ========================================================
@@ -18,6 +21,25 @@ export const initLocationsAndCameras = ( responsesData ) => {
         }
     }
 };
+
+export const getCarsLocationFromSocket = ( oldLocations ) => {
+    return ( dispatch ) => {
+        socket.on("UPDATE_CARS_LOCATION", ( newCarLocationElement ) => {
+            dispatch(updateCarsLocation(oldLocations, newCarLocationElement));
+        });
+    }
+}
+
+export const updateCarsLocation = ( oldCarLocations, newCarLocationElement ) => {
+    let newCarsLocationsArray = [];
+    oldCarLocations.forEach( ( car ) => {
+        car.id !== newCarLocationElement.id ? newCarsLocationsArray.push(car) : newCarsLocationsArray.push(newCarLocationElement);
+    });
+    return {
+        type: actionTypes.UPDATE_CARS_LOCATIONS,
+        paylod: { Cars: newCarsLocationsArray }
+    }
+}
 
 // Get all elements function:
 // ======================
