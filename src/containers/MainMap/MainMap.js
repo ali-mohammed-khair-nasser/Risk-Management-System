@@ -7,7 +7,7 @@ import PopupContent from '../../components/PopupContent/PopupContent';
 import AddEventPanel from '../AddEventPanel/AddEventPanel';
 import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
-import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
+// import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 import * as actions from '../../store/actions/index';
 
 class MainMap extends Component {
@@ -70,6 +70,23 @@ class MainMap extends Component {
                             return (<Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id } />);
                         })
                     }
+                    {/* {
+                        // Loop throw cars elements data and display it on the map
+                        this.props.cars.map( (car) => {
+                            // Choose the right icon based on the type of the car to show it as a marker
+                            // Then add this markers to the map in the right posation with popup include all information about that car which comming from database
+                            let carIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/${ car.carInfo.type }Marker.svg` ).default, popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ] });
+                            // Change the color of road based on the car type
+                            // [ Fire car => Red | Police car => Green | Ambulance => Blue ]
+                            let iconColor = "";
+                            switch( car.carInfo.type ) {
+                                case 'PoliceCar': iconColor = '#53DB93'; break;
+                                case 'Ambulance': iconColor = '#6FA1EC'; break;
+                                default: iconColor = '#EC6F6F';
+                            }
+                            return ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } /></Popup></Marker> );
+                        })
+                    } */}
                 </Map>
                 <AddEventPanel mapReferance={ this.map } />
             </div>
