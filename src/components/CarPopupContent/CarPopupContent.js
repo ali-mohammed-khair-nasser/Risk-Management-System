@@ -9,7 +9,7 @@ const CarPopupContent = ( props ) => (
         <div className="current-car-info">
             <Container>
                 <Row>
-                    <Col md="4" className="progress-bar"><RoundedProgressBar progress={ 64 } time={ props.neddedTime } distance={ props.neededDistance } /></Col>
+                    <Col md="4" className="progress-bar"><RoundedProgressBar progress={ 64 } time={ props.elementInfo.reaction.timeNeeded } distance={ props.elementInfo.reaction.distanceNeeded } /></Col>
                     <Col className="car-info">
                         <h5 className="title">Vehicle information</h5>
                         <p className="meta-info"><span><span className="circle"></span> Status:</span> { props.elementInfo.state.replace(/([a-z0-9])([A-Z])/g, '$1 $2') }</p>
