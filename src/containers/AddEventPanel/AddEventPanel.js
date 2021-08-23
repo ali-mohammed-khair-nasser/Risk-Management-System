@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import './AddEventPanel.scss';
-import Leaflet from 'leaflet';
+// import Leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
-import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
+// import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
 import { Iconly } from 'react-iconly';
 import { Button, RadioButton, Input, TextArea } from '../../components/UIElements/FormElements/FormElements';
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
@@ -162,38 +162,38 @@ class AddEventPanel extends Component {
 
             axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
                 if ( response ) {
-                    // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
-                    // The finished events will never shown on the map but we can get it from the history tab :)
-                    this.props.mapReferance.leafletElement.removeLayer(this.state.mapMarker);
-                    // Loop through all cars and render each car path and move it on that path
-                    response.data.data.elements.forEach( (element) => {
-                        // Reverce the path array becouse we get that langtude before the lattitude from the server
-                        let reversedPath = element.reaction.path.map(function reverse(item) {
-                            return Array.isArray(item) && Array.isArray(item[0]) ? item.map( reverse ) : item.reverse();
-                        });
+                    // // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
+                    // // The finished events will never shown on the map but we can get it from the history tab :)
+                    // this.props.mapReferance.leafletElement.removeLayer(this.state.mapMarker);
+                    // // Loop through all cars and render each car path and move it on that path
+                    // response.data.data.elements.forEach( (element) => {
+                    //     // Reverce the path array becouse we get that langtude before the lattitude from the server
+                    //     let reversedPath = element.reaction.path.map(function reverse(item) {
+                    //         return Array.isArray(item) && Array.isArray(item[0]) ? item.map( reverse ) : item.reverse();
+                    //     });
 
-                        // Change the color of road based on the event type
-                        // [ Fire => Red | Fighting => Green | Medical Event => Blue ]
-                        let iconColor = "";
-                        switch( element.type ) {
-                            case 'PoliceCar': iconColor = '#53DB93'; break;
-                            case 'Ambulance': iconColor = '#6FA1EC'; break;
-                            default: iconColor = '#EC6F6F';
-                        }
+                    //     // Change the color of road based on the event type
+                    //     // [ Fire => Red | Fighting => Green | Medical Event => Blue ]
+                    //     let iconColor = "";
+                    //     switch( element.type ) {
+                    //         case 'PoliceCar': iconColor = '#53DB93'; break;
+                    //         case 'Ambulance': iconColor = '#6FA1EC'; break;
+                    //         default: iconColor = '#EC6F6F';
+                    //     }
 
-                        delete Leaflet.Icon.Default.prototype._getIconUrl;
-                        Leaflet.Icon.Default.mergeOptions({
-                            iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ element.type }Marker.svg` ).default, shadowUrl: '',
-                            popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
-                        });
+                    //     delete Leaflet.Icon.Default.prototype._getIconUrl;
+                    //     Leaflet.Icon.Default.mergeOptions({
+                    //         iconRetinaUrl: "", iconUrl: require( `../../assets/images/${ element.type }Marker.svg` ).default, shadowUrl: '',
+                    //         popupAnchor: [ 0, -5 ], iconAnchor: [ 5, 5 ], iconSize: [ 10, 10 ]
+                    //     });
 
-                        // Drawing the route path on the map then fit the map zoom to it
-                        let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.5 }).addTo(map);
-                        map.addLayer(path);
+                    //     // Drawing the route path on the map then fit the map zoom to it
+                    //     let path = new Leaflet.polyline(reversedPath, { weight: 4, color: iconColor, opacity: 0.5 }).addTo(map);
+                    //     map.addLayer(path);
 
-                        // Use the moving marker script to move the car marker on this coordinates smothly :)
-                        movingMarkerFunction( map, reversedPath, element, { autostart: true }, iconColor );
-                    });
+                    //     // Use the moving marker script to move the car marker on this coordinates smothly :)
+                    //     movingMarkerFunction( map, reversedPath, element, { autostart: true }, iconColor );
+                    // });
                 }
             }).catch( ( error ) => { console.log( error ); } );
         }

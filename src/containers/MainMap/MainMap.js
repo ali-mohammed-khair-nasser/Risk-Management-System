@@ -65,7 +65,7 @@ class MainMap extends Component {
                             );
                         })
                     }
-                    {
+                    {                        
                         // Loop throw events data and display it on the map
                         this.props.events.map( ( event ) => {
                             // Create an event icon to show it as a marker for cameras
@@ -87,7 +87,7 @@ class MainMap extends Component {
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
-                            return car.carInfo.state === "InStation" ? null : ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } /></Popup></Marker> );
+                            return car.carInfo.state === "InStation" ? null : ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } neddedTime={ 0 } neededDistance={ 0 } elementInfo={ car.carInfo } allEvents={ this.props.events } /></Popup></Marker> );
                         })
                     }
                 </Map>

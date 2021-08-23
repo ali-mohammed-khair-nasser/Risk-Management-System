@@ -2,6 +2,7 @@ import * as actionTypes from './actionTyprs';
 import axios from 'axios';
 import io from "socket.io-client";
 
+// Creating socket io instance
 const socket = io.connect('localhost:8080');
 
 // Initialize location and cameras action creator function:
@@ -22,14 +23,25 @@ export const initLocationsAndCameras = ( responsesData ) => {
     }
 };
 
+// Get cars location from socket function:
+// =======================================
+// This function get the location of all cars on the map every second from the server
+// Then update the locations of the cars in our store :D
 export const getCarsLocationFromSocket = ( oldLocations ) => {
     return ( dispatch ) => {
-        socket.on("UPDATE_CARS_LOCATION", ( newCarLocationElement ) => {
+        socket.on("elements", ( newCarLocationElement ) => {
+            console.log(newCarLocationElement);
             dispatch(updateCarsLocation(oldLocations, newCarLocationElement));
         });
     }
 }
 
+// Update cars location function:
+// ==============================
+// After getting a car location we should update this car location only and not all cars
+// So we compare our cars if the updated car is not one of them then add this car to our array ( as old car )
+// Else put the new car element ( the updated one ) to that array 
+// Finally return the updated cars array to update the store and update the dom :)
 export const updateCarsLocation = ( oldCarLocations, newCarLocationElement ) => {
     let newCarsLocationsArray = [];
     oldCarLocations.forEach( ( car ) => {
