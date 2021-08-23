@@ -161,7 +161,13 @@ class AddEventPanel extends Component {
             this.state.mapMarker.dragging.disable();
 
             // Send the event to the server
-            axios.post( 'http://localhost:8080/api/event', eventInformation ).catch( ( error ) => { console.log( error ); } );
+            axios.post( 'http://localhost:8080/api/event', eventInformation ).then( ( response ) => {
+                if ( response ) {
+                    // Delete all events markers becouse after saving the event we get the markers from the database for the event which not responded yet
+                    // The finished events will never shown on the map but we can get it from the history tab :)
+                    this.props.mapReferance.leafletElement.removeLayer(this.state.mapMarker);
+                }
+            }).catch( ( error ) => { console.log( error ); } );
         }
     }
 

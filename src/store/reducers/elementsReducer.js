@@ -28,7 +28,7 @@ const elementsReducer = ( state = initialState, action ) => {
         case actionTypes.DELETE_ELEMENT_BACKDROP: return updateState(state, { deleteCenter: true });
         case actionTypes.HIDE_BACKDROP: return updateState(state, { addNewCenter: false, deleteCenter: false });
         case actionTypes.UPDATE_CARS_LOCATIONS: return updateState(state, { cars: action.paylod.Cars });
-        case actionTypes.UPDATE_EVENT_INFORMATION: return updateState(state, { events: action.paylod.Events });
+        // case actionTypes.UPDATE_EVENT_INFORMATION: return updateState(state, { events: action.paylod.Events });
         default: return state;
     }
 };

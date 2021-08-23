@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from "socket.io-client";
 
 // Creating socket io instance
-const socket = io.connect('localhost:8080', { transports : ['websocket'] });
+const socket = io.connect('localhost:8080');
 
 // Initialize location and cameras action creator function:
 // ========================================================

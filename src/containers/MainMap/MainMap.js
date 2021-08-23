@@ -71,7 +71,7 @@ class MainMap extends Component {
                         this.props.events.map( ( event ) => {
                             // Create an event icon to show it as a marker for cameras
                             let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/EventMarker.svg` ).default, iconSize: [ 35, 35 ], iconAnchor: [ 15, 35 ], popupAnchor: [ 0, 0 ] });
-                            return event.status === "Fininshed" ? null : ( <Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id }><Popup>{ event.status }</Popup></Marker> );
+                            return event.status === "Fininshed" ? null : <Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id }><Popup>{ event.status }</Popup></Marker>;
                         })
                     }
                     {
