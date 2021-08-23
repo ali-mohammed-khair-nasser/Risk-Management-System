@@ -29,6 +29,7 @@ class MainMap extends Component {
     componentDidUpdate() {
         this.props.updateData();
         this.props.getCarsNewLocations(this.props.cars);
+        this.props.getEventsNewInformations(this.props.events);
     }
     
     render() {
@@ -70,7 +71,7 @@ class MainMap extends Component {
                         this.props.events.map( ( event ) => {
                             // Create an event icon to show it as a marker for cameras
                             let markerIcon = Leaflet.icon({ iconUrl: require( `../../assets/images/EventMarker.svg` ).default, iconSize: [ 35, 35 ], iconAnchor: [ 15, 35 ], popupAnchor: [ 0, 0 ] });
-                            return (<Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id } />);
+                            return event.status === "Fininshed" ? null : ( <Marker position={[ event.lat, event.lng ]} icon={ markerIcon } key={ event.id }><Popup>{ event.status }</Popup></Marker> );
                         })
                     }
                     {
@@ -106,6 +107,7 @@ const mapStateToProps = ( state ) => ({
 });
 const mapDispatchToProps = ( dispatch ) => ({
     updateData: () => dispatch(actions.getAllElements()),
-    getCarsNewLocations: (oldLocations) => dispatch(actions.getCarsLocationFromSocket(oldLocations))
+    getCarsNewLocations: (oldLocations) => dispatch(actions.getCarsLocationFromSocket(oldLocations)),
+    getEventsNewInformations: (oldEvents) => dispatch(actions.getEventInfoFromSocket(oldEvents))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(MainMap);

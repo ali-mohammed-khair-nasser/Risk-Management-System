@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from "socket.io-client";
 
 // Creating socket io instance
-const socket = io.connect('localhost:8080');
+const socket = io.connect('localhost:8080', { transports : ['websocket'] });
 
 // Initialize location and cameras action creator function:
 // ========================================================
@@ -26,7 +26,7 @@ export const initLocationsAndCameras = ( responsesData ) => {
 // Get cars location from socket function:
 // =======================================
 // This function get the location of all cars on the map every second from the server
-// Then update the locations of the cars in our store :D
+// Then update the locations of the cars that should update in our store :D
 export const getCarsLocationFromSocket = ( oldLocations ) => {
     return ( dispatch ) => {
         socket.on("elements", ( newCarLocationElement ) => dispatch(updateCarsLocation(oldLocations, newCarLocationElement)) );
@@ -47,6 +47,23 @@ export const updateCarsLocation = ( oldCarLocations, newCarLocationElement ) => 
     return {
         type: actionTypes.UPDATE_CARS_LOCATIONS,
         paylod: { Cars: newCarsLocationsArray }
+    }
+}
+
+export const getEventInfoFromSocket = ( oldEvents ) => {
+    return ( dispatch ) => {
+        socket.on("events", ( newEventInfo ) => dispatch(updateEventInfo(oldEvents, newEventInfo)) );
+    }
+}
+
+export const updateEventInfo = ( oldEvents, newEventInfo ) => {
+    let newEventsInformation = [];
+    oldEvents.forEach( ( event ) => {
+        event.id !== newEventInfo.id ? newEventsInformation.push(event) : newEventsInformation.push(newEventInfo);
+    });
+    return {
+        type: actionTypes.UPDATE_EVENT_INFORMATION,
+        paylod: { Events: newEventsInformation }
     }
 }
 
