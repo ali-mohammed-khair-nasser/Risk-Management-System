@@ -29,10 +29,7 @@ export const initLocationsAndCameras = ( responsesData ) => {
 // Then update the locations of the cars in our store :D
 export const getCarsLocationFromSocket = ( oldLocations ) => {
     return ( dispatch ) => {
-        socket.on("elements", ( newCarLocationElement ) => {
-            console.log(newCarLocationElement);
-            dispatch(updateCarsLocation(oldLocations, newCarLocationElement));
-        });
+        socket.on("elements", ( newCarLocationElement ) => dispatch(updateCarsLocation(oldLocations, newCarLocationElement)) );
     }
 }
 
