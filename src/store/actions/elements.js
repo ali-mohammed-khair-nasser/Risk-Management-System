@@ -50,12 +50,21 @@ export const updateCarsLocation = ( oldCarLocations, newCarLocationElement ) => 
     }
 }
 
+// Get event infofrom socket function:
+// ===================================
+// We use this fucntion to get the event new information after it's status changed to update the UI
 export const getEventInfoFromSocket = ( oldEvents ) => {
     return ( dispatch ) => {
         socket.on("events", ( newEventInfo ) => dispatch(updateEventInfo(oldEvents, newEventInfo)) );
     }
 }
 
+// Update event info function:
+// ===========================
+// Getting the old event information
+// Then compare that information with the new event
+// If the both events not equal by the ID then put the event to the new events array
+// Elese then the event changed so put the new event to that array
 export const updateEventInfo = ( oldEvents, newEventInfo ) => {
     let newEventsInformation = [];
     oldEvents.forEach( ( event ) => {
