@@ -1,10 +1,10 @@
 // Importing general style
 @import '../../assets/css/generalStyle';
 
-.car-popup { width: 490px!important; display: block;
+.car-popup { width: 500px!important; display: block;
     .leaflet-popup-content { padding: 10px 5px!important; margin-bottom: 5px!important; }
     // Car popup content styles
-    .car-popup-content { overflow: hidden; width: 100%; padding-right: 100px;
+    .car-popup-content { overflow: hidden; width: 100%; padding-right: 90px;
         // Reset leaflet default styles
         .leaflet-popup-tip-container, .leaflet-routing-container { display: block!important; position: relative!important; margin-left: 27px; } 
 

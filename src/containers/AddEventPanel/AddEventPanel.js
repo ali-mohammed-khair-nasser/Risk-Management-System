@@ -62,25 +62,25 @@ class AddEventPanel extends Component {
         let chars = "abcdefghijklmnopqrstuvwxyz0123456789",                                      // Chars & numbers that used to generate the ID
             size = 4,                                                                            // Max size of the ID
             i = 1,                                                                               // Starting point of chars
-            generatedID = "";                                                                    // The result of generating will saved in this variable
+            generatedName = "";                                                                    // The result of generating will saved in this variable
 
         // While the number of ID characters not equal to size repeat generating characters
         while ( i <= size ) { 
             let max = chars.length - 1,
                 num = Math.floor(Math.random() * max),
                 temp = chars.substr(num, 1);
-            generatedID += temp;
+            generatedName += temp;
             i++;
         }
         // Just setting the type of the event name to match each other
         if ( eventType === 'Fire' ) eventType = 'fire_and_smoke';
         if ( eventType === 'Violence' ) eventType = 'fighting';
         if ( eventType === 'Medical' ) eventType = 'person_falling';
-        generatedID = `Event_${ eventType.toLowerCase() }_${ generatedID.toUpperCase() }`;
+        generatedName = `Event_${ eventType.toLowerCase() }_${ generatedName.toUpperCase() }`;
 
         // Set tthe event name in the ui :)
-        document.querySelector( 'input[ name="eventName" ]' ).value = generatedID;
-        return generatedID;
+        document.querySelector( 'input[ name="eventName" ]' ).value = generatedName;
+        return generatedName;
     }
 
     // Add event panel function:
@@ -111,7 +111,7 @@ class AddEventPanel extends Component {
         this.setState({
             eventInformation: {
                 type: 'Fire',
-                name: '',
+                name: document.querySelector( 'input[ name="eventName" ]' ).value,
                 lat: null,
                 lng: null,
                 size: 'Small',
@@ -224,7 +224,7 @@ class AddEventPanel extends Component {
                             <h2 className="section-title">Select an event to add it to the map</h2>
                             <RadioButton name="eventType" defaultselectedvalue="Fire" options={{ Fire: 'Fire & Smoke', Violence: 'Fighting', Medical: 'Medical Event' }} onChange={ ( event ) => { this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), type: event.target.value } }); this.generateEventNames(event.target.value); } } />
                             <h2 className="section-title">Event name</h2>
-                            <Input type="text" name="eventName" placeholder="Event_fire_and_smoke_135" autoComplete="off" onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), name: event.target.value } }) } />
+                            <Input type="text" name="eventName" autoComplete="off" onChange={ ( event ) => this.setState({ eventInformation: { ...Object.assign( {}, this.state.eventInformation ), name: event.target.value } }) } />
                             <h2 className="section-title">Add location</h2>
                             <SearchLocation name="eventLocation" placeholder="Search for location or click to locate on the map" mapReferance={ this.props.mapReferance } mapMarker={ this.state.mapMarker } getLocationHandler={ this.getLocationLatLng } />
                         </Col>
