@@ -1,9 +1,5 @@
 import * as actionTypes from './actionTyprs';
 import axios from 'axios';
-import io from "socket.io-client";
-
-// Creating socket io instance
-const socket = io.connect('localhost:8080');
 
 // Initialize location and cameras action creator function:
 // ========================================================
@@ -22,59 +18,6 @@ export const initLocationsAndCameras = ( responsesData ) => {
         }
     }
 };
-
-// Get cars location from socket function:
-// =======================================
-// This function get the location of all cars on the map every second from the server
-// Then update the locations of the cars that should update in our store :D
-export const getCarsLocationFromSocket = ( oldLocations ) => {
-    return ( dispatch ) => {
-        socket.on("elements", ( newCarLocationElement ) => dispatch(updateCarsLocation(oldLocations, newCarLocationElement)) );
-    }
-}
-
-// Update cars location function:
-// ==============================
-// After getting a car location we should update this car location only and not all cars
-// So we compare our cars if the updated car is not one of them then add this car to our array ( as old car )
-// Else put the new car element ( the updated one ) to that array 
-// Finally return the updated cars array to update the store and update the dom :)
-export const updateCarsLocation = ( oldCarLocations, newCarLocationElement ) => {
-    let newCarsLocationsArray = [];
-    oldCarLocations.forEach( ( car ) => {
-        car.id !== newCarLocationElement.id ? newCarsLocationsArray.push(car) : newCarsLocationsArray.push(newCarLocationElement);
-    });
-    return {
-        type: actionTypes.UPDATE_CARS_LOCATIONS,
-        paylod: { Cars: newCarsLocationsArray }
-    }
-}
-
-// Get event infofrom socket function:
-// ===================================
-// We use this fucntion to get the event new information after it's status changed to update the UI
-export const getEventInfoFromSocket = ( oldEvents ) => {
-    return ( dispatch ) => {
-        socket.on("events", ( newEventInfo ) => dispatch(updateEventInfo(oldEvents, newEventInfo)) );
-    }
-}
-
-// Update event info function:
-// ===========================
-// Getting the old event information
-// Then compare that information with the new event
-// If the both events not equal by the ID then put the event to the new events array
-// Elese then the event changed so put the new event to that array
-export const updateEventInfo = ( oldEvents, newEventInfo ) => {
-    let newEventsInformation = [];
-    oldEvents.forEach( ( event ) => {
-        event.id !== newEventInfo.id ? newEventsInformation.push(event) : newEventsInformation.push(newEventInfo);
-    });
-    return {
-        type: actionTypes.UPDATE_EVENT_INFORMATION,
-        paylod: { Events: newEventsInformation }
-    }
-}
 
 // Get all elements function:
 // ======================

@@ -135,7 +135,7 @@ class SearchLocation extends Component {
 
         return (
             <div className="search-location">
-                <Input mainlabel={ this.props.mainlabel ? this.props.mainlabel : null } type="search" name={ this.props.name } placeholder={ this.props.placeholder } autoComplete="off" onChange={ this.getSearchLocations } />
+                <Input mainlabel={ this.props.mainlabel ? this.props.mainlabel : null } type="search" value={ this.props.value } name={ this.props.name } placeholder={ this.props.placeholder } autoComplete="off" onChange={ this.getSearchLocations } />
                 <Button className="button-danger" onClick={ this.locateButtonClickHandle }><Iconly name="Location" label="Location" size={ 24 } className="location-icon" />Locate</Button>
                 { searchResults.length > 0 ? <div className="search-results"><ul>{ searchResults }</ul></div> : null }
             </div>

@@ -9,6 +9,7 @@ import CCTVCamera from '../../components/CCTVCamera/CCTVCamera';
 import { connect } from 'react-redux';
 import CarPopupContent from '../../components/CarPopupContent/CarPopupContent';
 import * as actions from '../../store/actions/index';
+import axios from 'axios';
 
 class MainMap extends Component {
     // Component state contents:
@@ -26,11 +27,10 @@ class MainMap extends Component {
         this.setState({ isMapInit: true });
     }
     
-    componentDidUpdate() {
-        this.props.updateData();
-        this.props.getCarsNewLocations(this.props.cars);
-        this.props.getEventsNewInformations(this.props.events);
-    }
+    componentDidUpdate() { this.props.updateData(); }
+
+    backToStation = (carID) => { axios.patch('http://localhost:8080/api/element/back-to-station/' + carID); }
+    forwardToAnotherEvent = (carID, eventID) => { axios.patch('http://localhost:8080/api/element/' + carID + '/forward-to/event/' + eventID); }
     
     render() {
         return (
@@ -88,7 +88,7 @@ class MainMap extends Component {
                                 case 'Ambulance': iconColor = '#6FA1EC'; break;
                                 default: iconColor = '#EC6F6F';
                             }
-                            return car.carInfo.state === "InStation" ? null : ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } elementInfo={ car.carInfo } /></Popup></Marker> );
+                            return car.carInfo.state === "InStation" ? null : ( <Marker position={[ car.carInfo.lat, car.carInfo.lng ]} icon={ carIcon } key={ car.carInfo.name }><Popup className="car-popup"><CarPopupContent iconcolor={ iconColor } allEvents={ this.props.events } elementInfo={ car.carInfo } backToStation={ this.backToStation } forwardToAnotherEvent={ this.forwardToAnotherEvent } /></Popup></Marker> );
                         })
                     }
                 </Map>
@@ -105,9 +105,5 @@ const mapStateToProps = ( state ) => ({
     events: state.elements.events,
     cars: state.elements.cars
 });
-const mapDispatchToProps = ( dispatch ) => ({
-    updateData: () => dispatch(actions.getAllElements()),
-    getCarsNewLocations: (oldLocations) => dispatch(actions.getCarsLocationFromSocket(oldLocations)),
-    getEventsNewInformations: (oldEvents) => dispatch(actions.getEventInfoFromSocket(oldEvents))
-});
+const mapDispatchToProps = ( dispatch ) => ({ updateData: () => dispatch(actions.getAllElements()) });
 export default connect(mapStateToProps, mapDispatchToProps)(MainMap);

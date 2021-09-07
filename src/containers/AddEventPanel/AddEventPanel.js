@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './AddEventPanel.scss';
-// import Leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
-// import movingMarkerFunction from '../../components/MovingMarker/MovingMarker';
 import { Iconly } from 'react-iconly';
 import { Button, RadioButton, Input, TextArea } from '../../components/UIElements/FormElements/FormElements';
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';

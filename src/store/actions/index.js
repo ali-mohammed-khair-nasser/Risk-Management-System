@@ -5,7 +5,5 @@ export {
     addElementBackdropOpen,
     deleteElementBackdropOpen,
     deleteElement,
-    hideBackdrop,
-    getCarsLocationFromSocket,
-    getEventInfoFromSocket
+    hideBackdrop
 } from './elements';
